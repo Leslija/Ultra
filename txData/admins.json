@@ -1,0 +1,21 @@
+[
+  {
+    "name": "paulosafky",
+    "master": true,
+    "password_hash": "$2a$11$cppaNW2DM.JpRQNx2STf0uh1uyUk1tJnUThrRiQMYdw86rUS15xYm",
+    "providers": {
+      "citizenfx": {
+        "id": "paulosafky",
+        "identifier": "fivem:1591010",
+        "data": {
+          "sub": "cdf3a87a35a01db6464bb8cf72392d08",
+          "nameid": "https://forum.cfx.re/internal/user/1591010",
+          "name": "paulosafky",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/paulosafky/256/1401751_2.png",
+          "profile": "https://forum.cfx.re/u/paulosafky"
+        }
+      }
+    },
+    "permissions": []
+  }
+]
