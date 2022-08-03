@@ -1,0 +1,50 @@
+{
+    "teste":{
+        "label":"teste"
+    },
+
+    "TESTE":{
+        "label":"TESTE2"
+    },
+
+    "ballas":{
+        "label":"Ballas"
+    },
+
+    "marabunta":{
+        "label":"Marabunta"
+    },
+
+    "taxi":{
+        "label":"taxi"
+    },
+
+    "thefamily":{
+        "label":"The Family"
+    },
+
+    "lapis":{
+        "label":"lapis"
+    },
+
+    "lost":{
+        "label":"The Lost MC"
+    },
+
+    "vagos":{
+        "label":"Vagos"
+    },
+
+    "lol":{
+        "label":"lol"
+    },
+
+    "maffia":{
+        "label":"Maffia"
+    },
+
+    "none":{
+        "label":"Sem Org"
+    }
+
+}

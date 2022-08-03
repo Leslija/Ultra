@@ -1,0 +1,361 @@
+{
+    "teste": {
+        "Stash": {
+            "label": "teste Cofre",
+            "coords": {
+                "z": 31.04890441894531,
+                "y": -847.081787109375,
+                "x": 182.52105712890626,
+                "h": 242.069091796875
+            }
+        },
+        "VehicleSpawner": {
+            "vehicles": [],
+            "coords": {
+                "z": 30.99418258666992,
+                "y": -851.0950317382813,
+                "x": 181.3884429931641,
+                "h": 153.86520385742188
+            },
+            "colours": {
+                "secondary": {
+                    "b": 255,
+                    "r": 255,
+                    "g": 255
+                },
+                "primary": {
+                    "b": 255,
+                    "r": 255,
+                    "g": 255
+                }
+            },
+            "label": "Veiculos"
+        }
+    },
+    "TESTE": {
+        "Stash": {
+            "coords": {
+                "z": 41.96566390991211,
+                "y": -619.191650390625,
+                "x": 256.5838317871094,
+                "h": 0.0
+            },
+            "label": "TESTE Cofre"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "rmodx6": "Bmw X6"
+            },
+            "coords": {
+                "z": 42.61745452880859,
+                "y": -609.978515625,
+                "x": 262.38128662109377,
+                "h": 327.6294860839844
+            },
+            "colours": {
+                "primary": {
+                    "r": 255,
+                    "b": 0,
+                    "g": 0
+                },
+                "secondary": {
+                    "r": 238,
+                    "b": 0,
+                    "g": 0
+                }
+            },
+            "label": "Veiculos"
+        }
+    },
+    "families": {
+        "Stash": {
+            "coords": {
+                "z": 35.03,
+                "y": -1609.84,
+                "x": -136.91,
+                "h": 66.89
+            },
+            "label": "Families Stash"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "rumpo3": "RumpoXL",
+                "chino2": "Lowrider",
+                "buffalo2": "Buffalo Sport",
+                "manchez": "Manchez"
+            },
+            "coords": {
+                "z": 31.65,
+                "y": -1597.97,
+                "x": -108.24,
+                "h": 322.23
+            },
+            "colours": {
+                "primary": {
+                    "r": 0,
+                    "b": 0,
+                    "g": 50
+                },
+                "secondary": {
+                    "r": 0,
+                    "b": 0,
+                    "g": 0
+                }
+            },
+            "label": "Car Spawn"
+        }
+    },
+    "ballas": {
+        "Stash": {
+            "coords": {
+                "z": 21.3276,
+                "y": -1970.89,
+                "x": 113.3059
+            },
+            "label": "Ballas Stash"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "rumpo3": "RumpoXL",
+                "chino2": "Lowrider",
+                "buffalo2": "Buffalo Sport",
+                "manchez": "Manchez"
+            },
+            "coords": {
+                "z": 20.75,
+                "y": -1967.09,
+                "x": 89.04,
+                "h": 324.12
+            },
+            "colours": {
+                "primary": {
+                    "r": 108,
+                    "b": 184,
+                    "g": 11
+                },
+                "secondary": {
+                    "r": 108,
+                    "b": 11,
+                    "g": 18
+                }
+            },
+            "label": "Car Spawn"
+        }
+    },
+    "marabunta": {
+        "Stash": {
+            "coords": {
+                "z": 66.61924743652344,
+                "y": -1490.4158935546876,
+                "x": 1438.90771484375,
+                "h": 247.366943359375
+            },
+            "label": "marabunta Stash"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "kuruma": "Kuruma",
+                "burrito3": "Burrito",
+                "primo2": "Primo Custom",
+                "buffalo": "Buffalo"
+            },
+            "coords": {
+                "z": 60.96406173706055,
+                "y": -1505.5174560546876,
+                "x": 1422.27294921875,
+                "h": 161.4316864013672
+            },
+            "colours": {
+                "primary": {
+                    "b": 170,
+                    "r": 24,
+                    "g": 56
+                },
+                "secondary": {
+                    "b": 170,
+                    "r": 24,
+                    "g": 56
+                }
+            },
+            "label": "Car Spawn"
+        }
+    },
+    "lapis": {
+        "Stash": {
+            "coords": {
+                "z": 40.25022888183594,
+                "y": -629.7266845703125,
+                "x": 225.65538024902345,
+                "h": 78.04389190673828
+            },
+            "label": "lapis Cofre"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "rmodx6": "Bmw X6"
+            },
+            "coords": {
+                "z": 39.6331901550293,
+                "y": -637.2173461914063,
+                "x": 221.66403198242188,
+                "h": 149.16770935058598
+            },
+            "colours": {
+                "primary": {
+                    "b": 187,
+                    "r": 0,
+                    "g": 221
+                },
+                "secondary": {
+                    "b": 255,
+                    "r": 255,
+                    "g": 255
+                }
+            },
+            "label": "Veiculos"
+        }
+    },
+    "lost": {
+        "Stash": {
+            "coords": {
+                "z": 74.84542083740235,
+                "y": -92.63550567626952,
+                "h": 217.8155212402344,
+                "x": 987.299560546875
+            },
+            "label": "lost Stash"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "burrito3": "Burrito",
+                "nightblade": "Nightblade",
+                "hexer": "Hexer"
+            },
+            "coords": {
+                "z": 74.00828552246094,
+                "y": -132.17294311523438,
+                "h": 57.54240798950195,
+                "x": 975.81640625
+            },
+            "colours": {
+                "primary": {
+                    "r": 0,
+                    "b": 0,
+                    "g": 0
+                },
+                "secondary": {
+                    "r": 0,
+                    "b": 0,
+                    "g": 0
+                }
+            },
+            "label": "Car Spawn"
+        }
+    },
+    "vagos": {
+        "Stash": {
+            "coords": {
+                "z": 22.39494895935058,
+                "y": -2012.9971923828128,
+                "h": 319.5579528808594,
+                "x": 337.393798828125
+            },
+            "label": "vagos Stash"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "rumpo3": "RumpoXL",
+                "chino2": "Lowrider",
+                "buffalo2": "Buffalo Sport",
+                "manchez": "Manchez"
+            },
+            "coords": {
+                "z": 21.05029678344726,
+                "y": -2027.5455322265626,
+                "h": 136.97149658203126,
+                "x": 327.4929809570313
+            },
+            "colours": {
+                "primary": {
+                    "b": 184,
+                    "r": 108,
+                    "g": 11
+                },
+                "secondary": {
+                    "b": 11,
+                    "r": 108,
+                    "g": 18
+                }
+            },
+            "label": "Car Spawn"
+        }
+    },
+    "taxi": {
+        "Stash": {
+            "label": "taxi Cofre",
+            "coords": {
+                "z": 30.57614517211914,
+                "y": -844.4398803710938,
+                "x": 202.18463134765626,
+                "h": 238.21453857421876
+            }
+        },
+        "VehicleSpawner": {
+            "vehicles": [],
+            "coords": {
+                "z": 30.6246395111084,
+                "y": -844.0317993164063,
+                "x": 200.20628356933595,
+                "h": 76.98650360107422
+            },
+            "colours": {
+                "primary": {
+                    "b": 255,
+                    "r": 255,
+                    "g": 255
+                },
+                "secondary": {
+                    "b": 255,
+                    "r": 255,
+                    "g": 255
+                }
+            },
+            "label": "Veiculos"
+        }
+    },
+    "lol": {
+        "Stash": {
+            "coords": {
+                "z": 29.29153251647949,
+                "y": -1354.2135009765626,
+                "x": 47.4378433227539,
+                "h": 43.69083023071289
+            },
+            "label": "lol Cofre"
+        },
+        "VehicleSpawner": {
+            "vehicles": {
+                "rmodx6": "Bmw X6"
+            },
+            "coords": {
+                "z": 29.29150390625,
+                "y": -1354.41943359375,
+                "x": 38.0124282836914,
+                "h": 67.48432159423828
+            },
+            "colours": {
+                "primary": {
+                    "b": 250,
+                    "r": 0,
+                    "g": 235
+                },
+                "secondary": {
+                    "b": 5,
+                    "r": 240,
+                    "g": 5
+                }
+            },
+            "label": "Veiculos"
+        }
+    }
+}
