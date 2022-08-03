@@ -1,0 +1,16 @@
+{
+  "unlocked_door": "Destrancada",
+  "locked_door": "Trancada",
+  "lock_door": "[E] Trancar",
+  "unlock_door": "[E] Destrancar",
+  "door_lock": "Trancas de Portas",
+  "passcode": "Password",
+  "lockpick_broke": "Lockpick partiu-se",
+  "pick_lock": "Usar Lockpick",
+  "add_lock": "Adicionar Tranca",
+  "edit_lock": "Editar Rranca",
+  "remove_lock": "Remover Tranca",
+  "cannot_unlock": "Nao podes destrancar",
+  "cannot_lock": "Não podes trancar",
+  "create_modify_lock": "Criar uma nova trancar ou editar uma",
+}

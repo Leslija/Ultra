@@ -1,0 +1,12 @@
+{
+    "Lua.diagnostics.globals": [
+        "TriggerEvent",
+        "AddEventHandler",
+        "RegisterServerEvent",
+        "GetPlayerIdentifiers",
+        "Wait",
+        "RegisterNetEvent",
+        "TriggerClientEvent"
+    ],
+    "Lua.workspace.checkThirdParty": false
+}
