@@ -1,0 +1,72 @@
+.vehicle-ui {
+    display: none;
+    user-select: none;
+    cursor:default;
+}
+
+.vehicle-ui .vehicle-ui-container {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 13%;
+    height: auto;
+    transform: scale(1.0);
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first {
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    inset: 0;
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .speedometer {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 45%;
+    font-size: 60px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.507);
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .speedometer .speed {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    text-align:right;
+    color: var(--main-background-color)
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .speedometer .opacity {text-align:right;opacity: 0.5; color:white;}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .right-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .right-container .meter {
+    color: var(--main-background-color);
+    font-weight: 800;
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .right-container .rpm {
+    color: white;
+    font-weight: 800;
+    width: 100px;
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .metadata {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+    color:rgba(255, 255, 255, 0.781)
+}
+
+.vehicle-ui .vehicle-ui-container .vehicle-first .metadata .fuel{display:none;margin-bottom: 4px}

@@ -1,0 +1,16 @@
+.ui-hud-settings .hud-wrapper ::-webkit-scrollbar {
+    width: 10px;
+}
+.ui-hud-settings .hud-wrapper ::-webkit-scrollbar-button{
+    display:none
+}
+
+.ui-hud-settings .hud-wrapper ::-webkit-scrollbar-track{
+    width: 10px;
+    background-color: transparent;
+}
+
+.ui-hud-settings .hud-wrapper ::-webkit-scrollbar-button {
+    width: 10px;
+    background-color: var(--main-background-color)
+}

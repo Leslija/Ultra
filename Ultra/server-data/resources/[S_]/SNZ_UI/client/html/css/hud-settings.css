@@ -1,0 +1,311 @@
+/*
+    @STARTUP
+    DO NOT TOUCH
+*/
+
+.hud-settings-bars {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, 50%)
+}
+
+.hud-settings-bars .hud-bars {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    opacity:0.9;
+}
+
+.hud-settings-bars .hud-bars .bars {
+    width: 100px;
+    height: 100px;
+    background-color: #1b1b1b;
+    border-radius: 8px;
+    color: #363636;
+    margin: 20px;
+    transform: scale(0.98);
+    box-shadow: 0 0 14px #1b1b1b;
+    transition: all 0.2s ease-in-out
+}
+
+.hud-settings-bars .hud-bars .bars:hover {
+    transform: scale(1.05);
+    color: var(--main-background-color);
+    box-shadow: 0 0 0 4px var(--main-background-color);
+}
+
+.hud-settings-bars .hud-bars .bars-are-active {
+    transform: scale(1.05);
+    color: var(--main-background-color);
+    box-shadow: 0 0 0 4px var(--main-background-color);
+}
+
+.hud-settings-bars .hud-bars .bars:active {
+    transform: scale(1.05);
+    color: var(--main-background-color);
+    box-shadow: 0 0 0 4px var(--main-background-color);
+}
+
+.hud-settings-bars .hud-bars .bars i {
+    display: table;
+    margin: 0 auto; 
+    line-height: 100px;
+    font-size: 80px;
+}
+
+.ui-hud-settings {
+    display:none;
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    width: 20vw;
+    height: auto;
+    overflow:hidden;
+    max-height: 65vh;
+    cursor:default;
+    user-select: none;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #1b1b1b;
+}
+
+.ui-hud-settings .hud-wrapper {
+    position: relative;
+    opacity:0.9;
+    background-color: #1b1b1b;
+    width: 100%;
+    height: auto;
+    
+}
+
+.ui-hud-settings .hud-wrapper .hud-settings {
+    width: 100%;
+    height: auto;
+}
+
+.ui-hud-settings .hud-wrapper .header-settings {
+    padding: 4%;   
+    font-size: 30px;
+    background: var(--main-background-color);
+    color: var(--main-text-color);
+    text-align: center;
+    margin-bottom: 5%;
+    border-bottom: 4px solid #1b1b1b;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.ui-hud-settings .hud-wrapper .header-settings .title-header {font-weight: 300;}
+
+.ui-hud-settings .hud-wrapper .settings-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: white;
+    font-size: 20px;
+    padding: 0%;
+}
+
+.ui-hud-settings .hud-wrapper .hud-settings .settings-body .button-settings {
+    background-color: #1b1b1b;
+    border-left: 8px solid transparent;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #1b1b1b;
+    border-radius: 0px;
+    transform: scale(1);
+    transition: all 0.15s ease-in-out;
+}
+.ui-hud-settings .hud-wrapper .hud-settings .settings-body .button-settings:hover {
+    padding: 20px 20px 20px 40px;
+    border-left: 8px solid var(--main-background-color);
+    background-color: #1d1d1d;
+}
+
+
+.ui-hud-settings .hud-wrapper .hud-settings .settings-body .button-settings:active {
+    transform: scale(1.02);
+}
+
+/*BUTTONS*/
+
+.button-back {
+    background-color: #1b1b1b;
+    border-left: 8px solid transparent;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #1b1b1b;
+    border-radius: 0px;
+    transform: scale(1);
+    transition: all 0.15s ease-in-out;
+}
+.button-back:hover {
+    padding: 20px 20px 20px 40px;
+    border-left: 8px solid var(--main-background-color);
+    background-color: #1d1d1d;
+}
+
+
+.button-back:active {
+    transform: scale(1.02);
+}
+
+.button-exit {
+    background-color: #1b1b1b;
+    border-left: 8px solid transparent;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #1b1b1b;
+    border-radius: 0px;
+    transform: scale(1);
+    transition: all 0.15s ease-in-out;
+}
+
+.button-exit:hover {
+    padding: 20px 20px 20px 40px;
+    border-left: 8px solid var(--main-background-color);
+    background-color: #1d1d1d;
+}
+
+.button-exit:active {
+    transform: scale(1.02);
+}
+
+/*
+    SETTINGS CONTAINER
+*/
+
+.ui-hud-settings .hud-wrapper .settings-container {
+    width: 100%;
+    height: auto;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .header-settings {
+    padding: 4%;   
+    font-size: 30px;
+    background: var(--main-background-color);
+    color: var(--main-text-color);
+    text-align: center;
+    margin-bottom: 5%;
+    border-bottom: 4px solid #1b1b1b;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .header-settings .title-header {font-weight: 400}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: white;
+    font-size: 20px;
+    padding: 0%;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .button-settings {
+    background-color: #1b1b1b;
+    border-left: 8px solid transparent;
+    color: rgb(255, 255, 255);
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #1b1b1b;
+    border-radius: 0px;
+    transform: scale(1);
+    transition: all 0.15s ease-in-out;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .button-settings:hover {
+    padding: 20px 20px 20px 40px;
+    border-left: 8px solid var(--main-background-color);
+    background-color: #1d1d1d;
+    color: white;
+}
+
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .button-settings:active {
+    transform: scale(1.02);
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .flex-row .label {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    border-left: 8px solid transparent;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 1em;
+    transform: scale(1);
+    width: 86%;   
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .flex-row .picker {
+    display: table;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 10%;
+    border-radius: 10px;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .label {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    border-left: 8px solid transparent;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 1em;
+    transform: scale(1);
+    width: 86%;   
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .button-reset {
+    background-color: #1b1b1b;
+    border-left: 8px solid transparent;
+    color: rgb(255, 255, 255);
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #1b1b1b;
+    border-radius: 0px;
+    transform: scale(1);
+    transition: all 0.15s ease-in-out;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .button-reset:hover {
+    padding: 20px 20px 20px 40px;
+    border-left: 8px solid var(--main-background-color);
+    background-color: #1d1d1d;
+    color: white;
+}
+
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .button-reset:active {
+    transform: scale(1.02);
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ui-hud-settings .hud-wrapper .settings-container .settings-container-body .flex-center .label {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    border-left: 8px solid transparent;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 1em;
+    transform: scale(1);
+    width: 86%;   
+    transition: all .2s ease-in-out
+}

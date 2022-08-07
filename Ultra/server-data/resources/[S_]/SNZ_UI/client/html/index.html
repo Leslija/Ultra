@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no>
+    <title>Aspect Hud</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+    <!--
+        [-] LINK
+    -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hud-settings.css">
+    <link rel="stylesheet" href="css/huds.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/ui-setup.css">
+    <link rel="stylesheet" href="css/vehicle-ui.css">
+    <link rel="stylesheet" href="css/streetlabel.css">
+
+    <!--
+        [-] ASSETS
+    -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css">
+    
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <!--
+        [-] FONT
+    -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--BOOT SETUP-->
+
+    <div id="setupUI">
+        <div class="ui-setup" id="firstSetupUI">
+            <div class="background-image">
+                <img src="https://game-insider.com/wp-content/uploads/gta5-grand-theft-auto-v-grand-theft-auto-hollywood-wallpaper.jpg" />
+            </div>
+            
+            <div class="flex-row" style="background:linear-gradient(117deg, rgba(19,19,19,0) 0%,rgba(19,19,19,1) 44%, rgba(19,19,19,1) 100%);">
+                <div class="to-next">
+                    <div class="picker">
+                        <div class="color-picker-boot"></div>
+                    </div>
+                    <div class="text">Escolhe uma cor</div>
+                </div>
+            </div>
+    
+            <div class="header-textUI">
+                <b>Bem vindo ao criador do HUD</b><br>
+            </div>
+    
+            <div class="button" id="goToSecond">PROXIMO</div>        
+        </div>
+
+        <div class="ui-setup" id="secondSetupUI">
+            <div class="background-image">
+                <img src="https://img.gta5-mods.com/q75/images/2020-bugatti-bolide-addon-sp-fivem/4df6f4-bolidenew.png" />
+            </div>
+            
+            <div class="flex-row" style="background:linear-gradient(117deg, rgba(19,19,19,1) 0%,rgba(19,19,19,1) 60%, rgba(19,19,19,0) 100%);">
+                <div class="selectedUI">
+                    <div id="uiSelection-Square">
+                        <div class="hud-square">
+                            <div class="hud-progress"></div>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div id="uiSelection-Square2">
+                        <div class="hud-square2">
+                            <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <defs>
+                                    <linearGradient id="healthTest" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="100%" class="squarev2__color"/>
+                                        <stop offset="100%" stop-color="#141414"/>
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#healthTest)" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="uiSelection-Skew">
+                        <div class="hud-skew">
+                            <div class="hud-progress"></div>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div id="uiSelection-Diamond">
+                        <div class="hud-diamond">
+                            <div class="hud-after"></div>
+                            <div class="hud-progress"></div>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                    <section>
+                        <select id="uiSelection" class="custom-select sources" placeholder="Square">
+                          <option value="uiSelection-Square" data-menu="boot" data-value="uiSquare" selected>Quadrado v1</option>
+                          <option value="uiSelection-Square2" data-menu="boot" data-value="uiSquare2">Quadrado v2</option>
+                          <option value="uiSelection-Skew" data-menu="boot" data-value="uiSkew">Torto</option>
+                          <option value="uiSelection-Diamond" data-menu="boot" data-value="uiDiamond">Diamante</option>
+                        </select>
+                      </section>
+                </div>
+            </div>
+    
+            <div class="header-textUI">
+                <b>ESCOLHA DE UI</b><br>
+            </div>
+            <div class="button" id="goToThird">PROXIMO</div>        
+        </div>
+
+        <div class="ui-setup" id="thirdSetupUI">
+            <div class="background-image">
+                <img src="https://steamuserimages-a.akamaihd.net/ugc/28489013022076755/58BCF77687C4D8462C67B164EEBC85CAED22E740/" />
+            </div>
+            
+            <div class="flex-row" style="background:linear-gradient(117deg, rgba(19,19,19,0) 0%,rgba(19,19,19,1) 44%, rgba(19,19,19,1) 100%);">
+                <div id="selectedNotification">
+                    <div class="notification" id="notify-basic">
+                        <div class="header"><div class="header-text"><i class="fas fa-exclamation-triangle"></i>NOTIFICAÇÕES</div></div>
+                        <div class="bottom-text">ISTO É UM TESTE AS NOTIFICAÇÕES.</div>
+                    </div>
+                    <div class="notification2" id="notify-modern">
+                        <div class="before">
+                            <div class="background-icon"><i class="fas fa-inbox"></i></div>
+                        </div>
+                        <div class="rest">
+                            <div class="header">NOTIFICAÇÕES</div>
+                            <div class="footer">ISTO É UM TESTE AS NOTIFICAÇÕES.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                    <section>
+                        <select id="notification-boot" class="custom-select sources" placeholder="Basic">
+                            <option data-type="basic" value="notify-basic" data-menu="boot-notification"  selected>Basico</option>
+                            <option data-type="modern" value="notify-modern" data-menu="boot-notification">Moderno</option>
+                        </select>
+                    </section>
+                </div>
+            </div>
+    
+            <div class="header-textUI">
+                <b>SELECIONAR NOTIFICAÇÕES</b><br>
+            </div>
+            <div class="button" id="goToFinish">PROXIMO</div>
+        </div>
+        <div class="ui-setup" id="finishSetupUI">
+            <div class="background-image">
+                <div style="background-color: #1b1b1b"></div>
+            </div>
+            
+            <div class="animated-background">
+            </div>
+    
+            <div class="header-textUI" id="finishingSetup">
+                <b>A GUARDAR</b><br>
+                IRÁ DEMORAR UNS SEGUNDOS
+            </div> 
+            <div class="header-textUI" id="welcome">
+                <b></b>
+            </div>       
+        </div>
+    </div>
+    
+    <div id="front-end">
+
+        <!--USER INTERFACES-->
+        
+        <div class="hud">
+            <div class="hud-container">
+                <div id="uiSquare">
+                    <div class="hud-square health">
+                        <div class="hud-progress health-progress"></div>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="hud-square armour">
+                        <div class="hud-progress armour-progress"></div>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="hud-square hunger">
+                        <div class="hud-progress hunger-progress"></div>
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <div class="hud-square thirst">
+                        <div class="hud-progress thirst-progress"></div>
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="hud-square stamina">
+                        <div class="hud-progress stamina-progress"></div>
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="hud-square oxygen">
+                        <div class="hud-progress oxygen-progress"></div>
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="hud-square voice">
+                        <div class="hud-progress voice-progress"></div>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+                <div id="uiSquare2">
+                    <div class="hud-square2 health">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <linearGradient id="health" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#health)" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
+                        </svg>
+                    </div>
+                    <div class="hud-square2 armour">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="shield-alt" class="svg-inline--fa fa-shield-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <linearGradient id="armour" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#armour)" d="M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM256.1 446.3l-.1-381 175.9 73.3c-3.3 151.4-82.1 261.1-175.8 307.7z"></path>
+                        </svg>
+                    </div>
+                    <div class="hud-square2 hunger">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="hamburger" class="svg-inline--fa fa-hamburger fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <linearGradient id="hunger" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#hunger)" d="M464 256H48a48 48 0 0 0 0 96h416a48 48 0 0 0 0-96zm16 128H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zM58.64 224h394.72c34.57 0 54.62-43.9 34.82-75.88C448 83.2 359.55 32.1 256 32c-103.54.1-192 51.2-232.18 116.11C4 180.09 24.07 224 58.64 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16z"></path>
+                        </svg>
+                    </div>
+                    <div class="hud-square2 thirst">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="glass-whiskey" class="svg-inline--fa fa-glass-whiskey fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <linearGradient id="thirst" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#thirst)" d="M480 32H32C12.5 32-2.4 49.2.3 68.5l56 356.5c4.5 31.5 31.5 54.9 63.4 54.9h273c31.8 0 58.9-23.4 63.4-54.9l55.6-356.5C514.4 49.2 499.5 32 480 32zm-37.4 64l-30 192h-313L69.4 96h373.2z"></path>
+                        </svg>
+                    </div>
+                    <div id="stamina-push" class="hud-square2 stamina">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="running" class="svg-inline--fa fa-running fa-w-13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <linearGradient id="stamina" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#stamina)" d="M272 96c26.51 0 48-21.49 48-48S298.51 0 272 0s-48 21.49-48 48 21.49 48 48 48zM113.69 317.47l-14.8 34.52H32c-17.67 0-32 14.33-32 32s14.33 32 32 32h77.45c19.25 0 36.58-11.44 44.11-29.09l8.79-20.52-10.67-6.3c-17.32-10.23-30.06-25.37-37.99-42.61zM384 223.99h-44.03l-26.06-53.25c-12.5-25.55-35.45-44.23-61.78-50.94l-71.08-21.14c-28.3-6.8-57.77-.55-80.84 17.14l-39.67 30.41c-14.03 10.75-16.69 30.83-5.92 44.86s30.84 16.66 44.86 5.92l39.69-30.41c7.67-5.89 17.44-8 25.27-6.14l14.7 4.37-37.46 87.39c-12.62 29.48-1.31 64.01 26.3 80.31l84.98 50.17-27.47 87.73c-5.28 16.86 4.11 34.81 20.97 40.09 3.19 1 6.41 1.48 9.58 1.48 13.61 0 26.23-8.77 30.52-22.45l31.64-101.06c5.91-20.77-2.89-43.08-21.64-54.39l-61.24-36.14 31.31-78.28 20.27 41.43c8 16.34 24.92 26.89 43.11 26.89H384c17.67 0 32-14.33 32-32s-14.33-31.99-32-31.99z"></path>
+                        </svg>
+                    </div>
+                    <div id="oxygen-push" class="hud-square2 oxygen">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="lungs" class="svg-inline--fa fa-lungs fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                            <defs>
+                                <linearGradient id="oxygen" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#oxygen)" d="M636.11 390.15C614.44 308.85 580.07 231 534.1 159.13 511.98 124.56 498.03 96 454.05 96 415.36 96 384 125.42 384 161.71v60.11l-32.88-21.92a15.996 15.996 0 0 1-7.12-13.31V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v170.59c0 5.35-2.67 10.34-7.12 13.31L256 221.82v-60.11C256 125.42 224.64 96 185.95 96c-43.98 0-57.93 28.56-80.05 63.13C59.93 231 25.56 308.85 3.89 390.15 1.3 399.84 0 409.79 0 419.78c0 61.23 62.48 105.44 125.24 88.62l59.5-15.95c42.18-11.3 71.26-47.47 71.26-88.62v-87.49l-85.84 57.23a7.992 7.992 0 0 1-11.09-2.22l-8.88-13.31a7.992 7.992 0 0 1 2.22-11.09L320 235.23l167.59 111.72a7.994 7.994 0 0 1 2.22 11.09l-8.88 13.31a7.994 7.994 0 0 1-11.09 2.22L384 316.34v87.49c0 41.15 29.08 77.31 71.26 88.62l59.5 15.95C577.52 525.22 640 481.01 640 419.78c0-9.99-1.3-19.94-3.89-29.63z"></path>
+                        </svg>
+                    </div>
+                    <div id="voice-push" class="hud-square2 voice">
+                        <svg focusable="false" width="35px" height="35px" data-prefix="fas" data-icon="microphone" class="svg-inline--fa fa-microphone fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <linearGradient id="voice" x1="0%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="100%" class="squarev2__color"/>
+                                    <stop offset="100%" stop-color="#141414"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#voice)" d="M176 352c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96S80 42.98 80 96v160c0 53.02 42.98 96 96 96zm160-160h-16c-8.84 0-16 7.16-16 16v48c0 74.8-64.49 134.82-140.79 127.38C96.71 376.89 48 317.11 48 250.3V208c0-8.84-7.16-16-16-16H16c-8.84 0-16 7.16-16 16v40.16c0 89.64 63.97 169.55 152 181.69V464H96c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-56v-33.77C285.71 418.47 352 344.9 352 256v-48c0-8.84-7.16-16-16-16z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div id="uiSkew">
+                    <div class="hud-skew health">
+                        <div class="hud-progress health-progress"></div>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="hud-skew armour">
+                        <div class="hud-progress armour-progress"></div>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="hud-skew hunger">
+                        <div class="hud-progress hunger-progress"></div>
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <div class="hud-skew thirst">
+                        <div class="hud-progress thirst-progress"></div>
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="hud-skew stamina">
+                        <div class="hud-progress stamina-progress"></div>
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="hud-skew oxygen">
+                        <div class="hud-progress oxygen-progress"></div>
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="hud-skew voice">
+                        <div class="hud-progress voice-progress"></div>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+                <div id="uiDiamond">
+                    <div class="hud-diamond health">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress health-progress"></div>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="hud-diamond armour">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress armour-progress"></div>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="hud-diamond hunger">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress hunger-progress"></div>
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <div class="hud-diamond thirst">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress thirst-progress"></div>
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="hud-diamond stamina">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress stamina-progress"></div>
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="hud-diamond oxygen">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress oxygen-progress"></div>
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="hud-diamond voice">
+                        <div class="hud-after"></div>
+                        <div class="hud-progress voice-progress"></div>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--UI SETTINGS-->
+        <div class="hud-settings-bars">
+            <div class="hud-bars">
+                <div class="bars" id="SetUI" onclick='UISetup()'><i class="fab fa-uikit"></i></div>
+                <div class="bars" id="SetCarUI" onclick='VehUISetup()'><i class="fas fa-car-alt"></i></div>
+                <div class="bars" id="SetNotifications" onclick='NotifySetup()'><i class="fas fa-inbox"></i></div>
+                <div class="bars" id="SetDraggable" onclick='Draggable()'><i class="fas fa-window-restore"></i></div>
+                <div class="bars" id="quitBars" onclick='Quit()'><i class="fas fa-window-close"></i></div>
+            </div>
+        </div>
+
+        <div class="ui-hud-settings">
+            
+            <div class="hud-wrapper">
+                <div class="header-settings">
+                    <div class="title-header"></div>
+                </div>
+
+                <!--UI SETTINGS-->
+
+                <div class="settings-container" id="uiInterface">
+                    <div class="settings-container-body">
+                        <div id="UISelector" class="button-settings">DEFINIÇÕES</div>
+                        <div id="UIHide-Elements" class="button-settings">ESCONDER</div>
+                        <div id="ColorSetup" class="button-settings">CORES</div>
+                        <div id="PositionSetup" class="button-settings">ORIENTAÇÃO</div>
+                        <div id="ScaleSetup" class="button-settings">TAMANHO</div>
+                        <div id="FontSetup" class="button-settings">LETRAS</div>
+                        <div class="button-exit">Sair</div>
+                    </div>
+                </div>
+                <!--
+                    UI SELECTOR
+                -->
+                <div class="settings-container" id="uiSelectorSettings">
+                    <section>
+                        <select id="uiSelect" class="custom-select sources" placeholder="UI Selection">
+                        <option data-menu="ui-select" value="uiSquare" selected>Quadrado v1</option>
+                        <option data-menu="ui-select" value="uiSquare2">Quadrado v2</option>
+                        <option data-menu="ui-select" value="uiSkew">Torto</option>
+                        <option data-menu="ui-select" value="uiDiamond">Diamante</option>
+                        <!--<option value="elipse">Elipse</option>-->
+                        </select>
+                    </section>
+                    <div class="settings-container-body">
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    HIDE ELEMENTS
+                -->
+                <div class="settings-container" id="uiHideElements">
+                    <div class="checkbox-bar">
+                        <div class="text">Vida</div><input id="hide-health" type="checkbox">
+                    </div>
+                    <div class="checkbox-bar">
+                        <div class="text">Colete</div><input id="hide-armour" type="checkbox">
+                    </div>
+                    <div class="checkbox-bar">
+                        <div class="text">Fome</div><input id="hide-hunger" type="checkbox">
+                    </div>
+                    <div class="checkbox-bar">
+                        <div class="text">Sede</div><input id="hide-thirst" type="checkbox">
+                    </div>
+                    <div class="checkbox-bar">
+                        <div class="text">Voz</div><input id="hide-voice" type="checkbox">
+                    </div>
+                    <div class="settings-container-body">
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    SETUP COLORS
+                -->
+                <div class="settings-container" id="uiSelectorColors">
+                    <div class="settings-container-body">
+                        <div class="flex-row">
+                            <div class="label">Cores</div>
+                            <div class="picker">
+                                <div class="color-picker"></div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="flex-row">
+                            <div class="label">UI Text Color</div>
+                            <div class="picker">
+                                <div class="color-text-picker"></div>
+                            </div>
+                        </div>-->
+                        <div id="button-reset-colors" class="button-reset">RESET</div>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    SETUP ORIENTATION
+                -->
+
+                <div class="settings-container" id="uiSelectorPosition">
+                    <div class="settings-container-body">
+                        <div class="label">ORIENTAÇÃO</div>
+                        <div class="button-settings" id="orientationRow">ESQ-DRT</div>
+                        <div class="button-settings" id="orientationColumn">CIMA-BAIXO</div>
+                        <div style="width: 100%; height: 10vh"></div>
+                        <div id="button-reset-position" class="button-settings">RESET</div>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    UI SCALE
+                -->
+                <div class="settings-container" id="uiScaleSetup">
+                    <div class="settings-container-body">
+                        <div class="label">TAMANHO</div>
+                        <input type="range" min="1" max="10" value="5" class="slider" id="ui-scale">
+                        <div class="label">Tamanho Radar</div>
+                        <input type="range" min="1" max="10" value="5" class="slider" id="veh-ui-scale">
+                        <div class="label">Tamanho Notificações</div>
+                        <input type="range" min="1" max="10" value="5" class="slider" id="notify-scale">
+                        <div class="label">Tamanho Ruas</div>
+                        <input type="range" min="1" max="10" value="5" class="slider" id="streetlabel-scale">
+                        <div style="width: 100%; height: 2vh"></div>
+                        <div id="button-reset-scale" class="button-settings">RESET</div>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    UI FONT SELECTION
+                -->
+                <div class="settings-container" id="uiFontSetup">
+                    <div class="settings-container-body">
+                        <section>
+                            <select id="uiFontSelect" class="custom-select sources" placeholder="Select Font">
+                                <option data-menu="ui-font" value="'Comic Sans MS', 'Comic Sans', cursive">Comic Sans</option>
+                                <option data-menu="ui-font" value="'Barlow', sans-serif" selected>Barlow</option>
+                                <option data-menu="ui-font" value="'Roboto', sans-serif">Roboto</option>
+                            </select>
+                        </section>
+                        <div style="width: 100%; height: 5vh"></div>
+                        <div id="button-reset-scale" class="button-settings">RESET</div>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--CAR UI SETTINGS-->
+
+                <div class="settings-container" id="vehUIInterface">
+                    <div class="settings-container-body">
+                        <!--<div id="vehUISelector" class="button-settings">Vehicle UI Selector</div>-->
+                        <div id="vehPositionSetup" class="button-settings">Posição</div>
+                        <!--<div id="UI-RestSettings" class="button-settings">Misc</div>-->
+                        <div class="button-exit">Sair</div>
+                    </div>
+                </div>
+
+                <!--
+                    CAR UI POSITION
+                -->
+
+                <div class="settings-container" id="vehUIPosition">
+                    <div class="settings-container-body">
+                        <div class="label">Posiçao Radar</div>
+                        <div id="veh-ui-reset" class="button-settings">RESET</div>
+                        <div style="width: 100%; height: 10vh"></div>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    NOTIFICATION SETTINGS
+                -->
+
+                <div class="settings-container" id="notificationSettings">
+                    <div class="settings-container-body">
+                        <div id="notifyType" class="button-settings">Escolher Notificações</div>
+                        <div id="notifyPositionSetup" class="button-settings">Posição Not.</div>
+                        <!--<div id="UI-RestSettings" class="button-settings">Misc</div>-->
+                        <div class="button-exit">Sair</div>
+                    </div>
+                </div>
+
+                <!--
+                    NOTIFICATION SELECTOR
+                -->
+
+                <div class="settings-container" id="notificationSelector">
+                    <div class="settings-container-body">
+                        <section>
+                            <select id="notifySelect" class="custom-select sources" placeholder="Notify Type">
+                            <option data-menu="notification-type" value="basic" selected>Basico</option>
+                            <option data-menu="notification-type" value="modern">Moderno</option>
+                            </select>
+                        </section>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--
+                    NOTIFICATION POSITION
+                -->
+                <div class="settings-container" id="notifyPosition">
+                    <div class="settings-container-body">
+                        <div class="label">Posiçao Notificações</div>
+                        <div id="notification-reset" class="button-settings">RESET</div>
+                        <div style="width: 100%; height: 10vh"></div>
+                        <div class="button-back">Voltar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            NOTIFICATIONS
+        -->
+        <div class="notifications">
+            <div class="notifications-container">
+                <!--
+                <div class="notification">
+                    <div class="header"><div class="header-text"><i class="fas fa-inbox"></i>NOTIFICATION</div></div>
+                    <div class="bottom-text">Notification type 1</div>
+                </div>
+                <div class="notification">
+                    <div class="header"><div class="header-text"><i class="fas fa-exclamation-triangle"></i>WARNING</div></div>
+                    <div class="bottom-text">Warning type 1</div>
+                </div>
+                <div class="notification2">
+                    <div class="before">
+                        <div class="background-icon"><i class="fas fa-inbox"></i></div>
+                    </div>
+                    <div class="rest">
+                        <div class="header">NOTIFICATION</div>
+                        <div class="footer">Notification type 2</div>
+                    </div>
+                </div>
+                <div class="notification2">
+                    <div class="before">
+                        <div class="background-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    </div>
+                    <div class="rest">
+                        <div class="header">WARNING</div>
+                        <div class="footer">Warning type 2</div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+        <!--
+            VEHICLE UI
+        -->
+        <div class="vehicle-ui">
+            <div class="vehicle-ui-container">
+                <div class="vehicle-first">
+                    <div class="speedometer"><div class="opacity">000</div><div class="speed"></div></div>
+                    <div class="right-container">
+                        <div class="meter">kmh</div>
+                        <div class="rpm">2000RPM</div>
+                    </div>
+                    <div class="metadata">
+                        <div class="fuel">
+                            <svg focusable="false" width="18px" height="18px" data-prefix="fas" data-icon="gas-pump" class="svg-inline--fa fa-gas-pump fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <defs>
+                                    <linearGradient id="fuelLevel" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="80%" class="squarev2__color"/>
+                                        <stop offset="80%" stop-color="rgba(255, 255, 255, 0.681)"/>
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#fuelLevel)" d="M336 448H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm157.2-340.7l-81-81c-6.2-6.2-16.4-6.2-22.6 0l-11.3 11.3c-6.2 6.2-6.2 16.4 0 22.6L416 97.9V160c0 28.1 20.9 51.3 48 55.2V376c0 13.2-10.8 24-24 24s-24-10.8-24-24v-32c0-48.6-39.4-88-88-88h-8V64c0-35.3-28.7-64-64-64H96C60.7 0 32 28.7 32 64v352h288V304h8c22.1 0 40 17.9 40 40v27.8c0 37.7 27 72 64.5 75.9 43 4.3 79.5-29.5 79.5-71.7V152.6c0-17-6.8-33.3-18.8-45.3zM256 192H96V64h160v128z"></path>
+                            </svg>
+                        </div>
+                        <div class="belt">
+                            <i class="fas fa-user-slash"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            STREET LABEL
+        -->
+        <div class="streetlabel-container">
+            <div class="streetlabel">
+                <div class="direction">N</div>
+                <div class="street">Misson Row</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification-ui">
+        <div class="notification-container">
+            <div class="notification-text"></div>
+        </div>
+    </div>
+
+    <audio id="audio" src="metadata/sound.wav"></audio>
+    <audio id="click" src="metadata/click.wav"></audio>
+    <audio id="music" src="metadata/backgroundmusic.wav"></audio>
+    <audio id="beltoff" src="metadata/beltoff.wav"></audio>
+    <audio id="belton" src="metadata/belton.wav"></audio>
+    <!--
+        [-] HANDLERS
+    -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/jquery.shadow-animation/1/mainfile"></script>
+    <script src="scripts/functions/misc.js" type="text/javascript"></script>
+    <script src="scripts/functions/container.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/setter.css">
+    <script src="scripts/functions/storage.js" type="text/javascript"></script>
+    <script src="scripts/functions/loadStorage.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/handlers/selectors.css">
+    <script src="scripts/handlers/selectors.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/handlers/classic.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <link rel="stylesheet" href="css/handlers/scrollbar.css"/>
+    <link rel="stylesheet" href="css/handlers/checkbox.css"/>
+    <link rel="stylesheet" href="css/handlers/range.css"/>
+    <script src="scripts/handlers/picker.js" type="text/javascript"></script>
+    <script src="scripts/handlers/checkbox.js" type="text/javascript"></script>
+    <script src="scripts/loader.js" type="text/javascript"></script>
+    <script src="scripts/windowListener.js" type="text/javascript"></script>
+</body>
+</html>

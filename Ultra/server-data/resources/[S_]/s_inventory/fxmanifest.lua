@@ -36,3 +36,9 @@ files {
 dependency 'qb-weapons'
 
 lua54 'yes'
+
+escrow_ignore {
+    'Config/*.lua',
+   
+}
+

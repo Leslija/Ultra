@@ -26,6 +26,7 @@ server_scripts {
 escrow_ignore {
     'config/config.lua',
 	'config/translations.lua',
-	'server/webhook.lua'
+	'server/webhook.lua',
+	's_territories.sql'
 }
 

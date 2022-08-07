@@ -9,7 +9,7 @@ dependencies {
 }
 
 client_script {
-    'client.lua',
+    'client/*.lua',
 	'@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
     '@PolyZone/EntityZone.lua',
@@ -20,7 +20,16 @@ client_script {
 
 server_script {
     '@oxmysql/lib/MySQL.lua',
-	'server.lua',
+	'server/*.lua',
 }
 
-shared_script 'shared.lua'
+shared_script 'config/*.lua'
+
+
+lua54 'yes'
+
+
+escrow_ignore {
+    'config/*.lua',
+   
+}
