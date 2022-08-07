@@ -177,10 +177,10 @@
     border-left: 1px solid;
     border-right: 1px solid;
     overflow: visible !important;
-    box-shadow: 0 0 30px rgb(30 0 0 / 98%) !important;
-    border-image: linear-gradient(var(--angle), #00a1aa,#c3252500,#c3252500,#c3252500,#00a1aa) 1;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.98) !important;
+    border-image: linear-gradient(var(--angle), #00000059,#00000000,#00000000,#00000000,#00000059) 1;
     animation: 20s rotate linear infinite,shake-slow2 10s ease-in-out infinite,gradient 15s ease infinite;
-    background: linear-gradient(-45deg, #00282a, #005055,#00797f,#00a1aa,#00cad5);
+    background: linear-gradient(var(--angle), #00282a, #005055,#000000a8,#00000059,#00000059);
     background-size: 400% 400%;
     
 
@@ -333,7 +333,7 @@
     border-radius: 4px;
     transition: 0.2s;
     overflow: visible !important;
-    background: linear-gradient(-45deg, #00282a, #005055,#00797f,#00a1aa,#00cad5);
+    background: linear-gradient(var(--angle), #00282a, #005055,#000000a8,#00000059,#00000059);
     background-size: 400% 400%;
     border-radius: .3vh;
     transition: all 0.2s ease;
@@ -383,27 +383,6 @@
 }
 
 .character-info {
-    /* display: none;
-    position: absolute;
-    width: 20%;
-    height: 40%;
-    right: 14%;
-    top: -40%;
-    border-radius: .2vh;
-    padding: 30px;
-    border: 2px white solid;
-    background-color: rgb(15 0 0 / 85%);
-    overflow: visible !important;
-    border-top: 4px solid;
-    border-bottom: 4px solid;
-    border-left: 2px solid;
-    border-right: 2px solid;
-    box-shadow: 0 0 40px rgb(30 0 0 / 98%) !important;
-    border-image: linear-gradient(var(--angle), #00a1aa,#c3252500,#c3252500,#c3252500,#00a1aa) 1;
-    animation:5s rotate linear infinite,shake-slow3 10s ease-in-out infinite,gradient 15s ease infinite;
-    background: linear-gradient(-45deg, #00282a, #005055,#00797f,#00a1aa,#00cad5);
-    background-size: 400% 400%; */
-
     display: none;
     position: absolute;
     width: 20%;
@@ -411,7 +390,7 @@
     right: 14%;
     top: -40%;
     overflow: visible !important;
-    background-color: rgb(15 0 0 / 85%);
+    background-color: rgba(0, 0, 0, 0.85);
     border-radius: .8vh;
     padding: 30px;
     border-top: 0.5px solid;
@@ -419,10 +398,10 @@
     border-left: 1px solid;
     border-right: 1px solid;
     overflow: visible !important;
-    box-shadow: 0 0 30px rgb(30 0 0 / 98%) !important;
-    border-image: linear-gradient(-360deg, #00a1aa,#c3252500,#c3252500,#c3252500,#00a1aa) 1;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.98) !important;
+    border-image: linear-gradient(var(--angle), #00000059,#00000000,#00000000,#00000000,#00000059) 1;
     animation: 20s rotate linear infinite,shake-slow2 10s ease-in-out infinite,gradient 15s ease infinite;
-    background: linear-gradient(-360deg, #00282a, #005055,#00797f,#00a1aa,#00cad5);
+    background: linear-gradient(var(--angle), #00282a, #005055,#000000a8,#00000059,#00000059);
     background-size: 400% 400%;
 }
 

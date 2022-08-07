@@ -11,7 +11,7 @@ end
 
 -- Server Events
 
-RegisterNetEvent("s_fuelserver:OpenMenu", function (amount, inGasStation)
+RegisterNetEvent("s_fuel:server:OpenMenu", function (amount, inGasStation)
 	local src = source
 	if not src then return end
 	local player = QBCore.Functions.GetPlayer(src)
@@ -24,7 +24,7 @@ RegisterNetEvent("s_fuelserver:OpenMenu", function (amount, inGasStation)
 				header = 'Combustível',
 				txt = 'Custo total vai ser: '..total..'€.' ,
 				params = {
-					event = "s_fuelclient:RefuelVehicle",
+					event = "s_fuel:client:RefuelVehicle",
 					args = total,
 				}
 			},
@@ -36,7 +36,7 @@ RegisterNetEvent("s_fuelserver:OpenMenu", function (amount, inGasStation)
 					header = 'Combustível',
 					txt = 'Custo total vai ser: '..total..'€.' ,
 					params = {
-					event = "s_fuelclient:RefuelVehicle",
+					event = "s_fuel:client:RefuelVehicle",
 					args = total,
 				}
 			},
@@ -44,7 +44,7 @@ RegisterNetEvent("s_fuelserver:OpenMenu", function (amount, inGasStation)
 	end
 end)
 
-RegisterNetEvent("s_fuelserver:PayForFuel", function (amount)
+RegisterNetEvent("s_fuel:server:PayForFuel", function (amount)
 	local src = source
 	if not src then return end
 	local player = QBCore.Functions.GetPlayer(src)

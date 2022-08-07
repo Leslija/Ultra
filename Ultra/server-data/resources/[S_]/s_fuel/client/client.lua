@@ -43,7 +43,7 @@ CreateThread(function()
 		options = {
 		{
 			type = "client",
-			event = "s_fuelclient:SendMenuToServer",
+			event = "s_fuel:client:SendMenuToServer",
 			icon = "fas fa-gas-pump",
 			label = "Abastecer Veículo",
 			canInteract = function()
@@ -161,44 +161,44 @@ end)
 
 -- Client Events
 
-RegisterNetEvent('s_fuelclient:buyCanMenu', function()
+RegisterNetEvent('s_fuel:client:buyCanMenu', function()
     exports['qb-menu']:openMenu({
         {
             header = "Combustível",
             txt = 'O custo total vai ser: '..Config.canCost..'€ incluindo taxas.',
             params = {
-                event = "s_fuelclient:buyCan",
+                event = "s_fuel:client:buyCan",
             }
         },
     })
 end)
 
-RegisterNetEvent('s_fuelclient:buyCan', function()
+RegisterNetEvent('s_fuel:client:buyCan', function()
     if not HasPedGotWeapon(ped, 883325847) then
 		if QBCore.Functions.GetPlayerData().money['cash'] >= Config.canCost then
 			TriggerServerEvent('QBCore:Server:AddItem', "weapon_petrolcan", 1)
 			SetPedAmmo(ped, 883325847, 4500)
 			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["weapon_petrolcan"], "add")
-        	TriggerServerEvent('s_fuelserver:PayForFuel', Config.canCost, GetPlayerServerId(PlayerId()))
+        	TriggerServerEvent('s_fuel:server:PayForFuel', Config.canCost, GetPlayerServerId(PlayerId()))
 		else
 			QBCore.Functions.Notify(Lang:t("notify.no_money"), "error")
 		end
     end
 end)
 
-RegisterNetEvent('s_fuelclient:refuelCanMenu', function()
+RegisterNetEvent('s_fuel:client:refuelCanMenu', function()
 	exports['qb-menu']:openMenu({
 		{
 			header = "Combustível",
 			txt = "Comprar Galão de Combustível.",
 			params = {
-				event = "s_fuelclient:refuelCan",
+				event = "s_fuel:client:refuelCan",
 			}
 		},
 	})
 end)
 
-RegisterNetEvent('s_fuelclient:refuelCan', function()
+RegisterNetEvent('s_fuel:client:refuelCan', function()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local ped = PlayerPedId()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
@@ -213,7 +213,7 @@ RegisterNetEvent('s_fuelclient:refuelCan', function()
 			disableMouse = false,
 			disableCombat = true,
 			}, {}, {}, {}, function() -- Done
-			TriggerServerEvent('s_fuelserver:PayForFuel', Config.refuelCost, GetPlayerServerId(PlayerId()))
+			TriggerServerEvent('s_fuel:server:PayForFuel', Config.refuelCost, GetPlayerServerId(PlayerId()))
 			SetPedAmmo(ped, 883325847, 4500)
 			PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
 			StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
@@ -227,18 +227,18 @@ RegisterNetEvent('s_fuelclient:refuelCan', function()
 	end
 end)
 
-RegisterNetEvent('s_fuelclient:SendMenuToServer', function()
+RegisterNetEvent('s_fuel:client:SendMenuToServer', function()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
 	local refillCost = Round(Config.RefillCost - CurFuel) * Config.CostMultiplier
 	if CurFuel < 95 then
-		TriggerServerEvent('s_fuelserver:OpenMenu', refillCost, inGasStation)
+		TriggerServerEvent('s_fuel:server:OpenMenu', refillCost, inGasStation)
 	else
 		QBCore.Functions.Notify(Lang:t("notify.vehicle_full"), "error")
 	end
 end)
 
-RegisterNetEvent('s_fuelclient:RefuelVehicle', function(refillCost)
+RegisterNetEvent('s_fuel:client:RefuelVehicle', function(refillCost)
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local ped = PlayerPedId()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
@@ -297,7 +297,7 @@ RegisterNetEvent('s_fuelclient:RefuelVehicle', function(refillCost)
 					disableMouse = false,
 					disableCombat = true,
 				}, {}, {}, {}, function() -- Done
-					TriggerServerEvent('s_fuelserver:PayForFuel', refillCost, GetPlayerServerId(PlayerId()))
+					TriggerServerEvent('s_fuel:server:PayForFuel', refillCost, GetPlayerServerId(PlayerId()))
 					SetFuel(vehicle, 100)
 					PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
 					StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
@@ -317,16 +317,16 @@ exports['s_target']:AddTargetModel(props, {
 	options = {
 		{
 			type = "client",
-			event = "s_fuelclient:buyCanMenu",
+			event = "s_fuel:client:buyCanMenu",
 			icon = "fas fa-burn",
 			label = "Comprar Galão de Combustível",
 		},
 		{
 			type = "client",
-			event = "s_fuelclient:refuelCanMenu",
+			event = "s_fuel:client:refuelCanMenu",
 			icon = "fas fa-gas-pump",
 			label = "Encher Galão de Combustível",
 		},
 	},
-		distance = 2.0
+	distance = 2.0
 })
