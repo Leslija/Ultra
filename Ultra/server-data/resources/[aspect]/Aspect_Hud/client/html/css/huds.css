@@ -56,7 +56,7 @@
 /*HUD-SQUAREV2*/
 
 .hud .hud-container .hud-square2 {
-    background-color: #1d1d1d;
+    /* background-color: #1d1d1d; */
     border-radius: 4px;
     width: 35px;
     padding: 3.5px;
@@ -93,20 +93,20 @@
     justify-content: flex-start;
     background-color: #1b1b1b;
     color:white;
-    border-radius: 3px;
+    border-radius: 25px;
     width: 35px;
     padding: 3.5px;
     margin-right: 20px;
     margin-bottom: 35px;
     height: 35px;
     box-shadow: 0 0 14px -2px #1d1d1d;
-    transform: skew(-10deg)
+
 }
 
 .hud .hud-container .hud-skew .hud-progress {
     background-color: var(--main-background-color);
     color:white;
-    border-radius: 3px;
+    border-radius: 25px;
     width: 35px;
     height: 50%;
 }
@@ -208,7 +208,7 @@
 /*HUD-SQUAREV2*/
 
 #secondSetupUI .hud-square2 {
-    background-color: #1d1d1d;
+    /* background-color: #1d1d1d; */
     border-radius: 4px;
     width: 35px;
     padding: 3.5px;
@@ -232,19 +232,18 @@
     justify-content: flex-start;
     background-color: #1b1b1b;
     color:white;
-    border-radius: 3px;
+    border-radius: 25px;
     width: 35px;
     padding: 3.5px;
     margin-right: 20px;
     margin-bottom: 35px;
     height: 35px;
-    transform: skew(-10deg)
 }
 
 #secondSetupUI .hud-skew .hud-progress {
     background-color: var(--main-background-color);
     color:white;
-    border-radius: 3px;
+    border-radius: 25px;
     width: 35px;
     height: 100%;
 }

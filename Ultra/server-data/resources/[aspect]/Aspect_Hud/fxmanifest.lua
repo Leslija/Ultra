@@ -32,5 +32,5 @@ server_scripts {
 }
 
 dependencies {
-	'SNZ_Handler'
+	'Aspect_UIHandler'
 }

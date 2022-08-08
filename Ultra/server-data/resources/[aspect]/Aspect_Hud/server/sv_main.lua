@@ -1,4 +1,4 @@
-SNZ = exports[Config.HandlerName]:GetSharedObject()
+ASPT = exports[Config.HandlerName]:GetSharedObject()
 
 if Config.Framework == 'ESX' then
 TriggerEvent('esx:getSharedObject', function(obj) 

@@ -17,13 +17,13 @@ RegisterNetEvent('QBCore:Client:PvpHasToggled', function(pvp_state)
     SetCanAttackFriendly(PlayerPedId(), pvp_state, false)
     NetworkSetFriendlyFireOption(pvp_state)
 end)
--- Teleport Commands
 
 RegisterNetEvent("QBCore:Server:UpdateGangs")
 AddEventHandler("QBCore:Server:UpdateGangs", function(gangs)
 	QBShared.Gangs = gangs
 	QBCore.Shared.Gangs = gangs
 end)
+-- Teleport Commands
 
 RegisterNetEvent('QBCore:Command:TeleportToPlayer', function(coords)
     local ped = PlayerPedId()

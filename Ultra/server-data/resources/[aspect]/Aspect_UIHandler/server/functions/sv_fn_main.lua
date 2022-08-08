@@ -1,7 +1,7 @@
 Framework = nil
 
 function GetSharedObject()
-	return SNZ
+	return ASPT
 end
 
 function GetConfig()

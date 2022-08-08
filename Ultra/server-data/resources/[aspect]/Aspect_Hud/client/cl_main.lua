@@ -1,6 +1,6 @@
 Citizen.CreateThread(function()
-	while not SNZ do
-		SNZ = exports[Config.HandlerName]:GetSharedObject()
+	while not ASPT do
+		ASPT = exports[Config.HandlerName]:GetSharedObject()
 		Citizen.Wait(10)
 	end
 end)
@@ -42,7 +42,7 @@ elseif Config.Framework == 'QBCore' then
 
 Citizen.CreateThread(function()
 	while not Framework do
-		Framework = exports['qb-core']:GetSharedObject()
+		Framework = exports['qb-core']:GetCoreObject()
 		Citizen.Wait(10)
 	end
 	UI.Functions.StartMainThread()
@@ -205,15 +205,15 @@ RegisterCommand('openuisettings', function()
 		type = 'settings'
 	})
 end, false)
-RegisterKeyMapping('openuisettings', 'UI Settings', 'keyboard', Config.SettingsButton)
+RegisterKeyMapping('openuisettings', 'Definições UI', 'keyboard', Config.SettingsButton)
 
 RegisterCommand('toggleui', function()
 	local state = not UI.Functions.GetUIState()
 	UI.Functions.ToggleUI(state)
 end, false)
-RegisterKeyMapping('toggleui', 'UI Toggle', 'keyboard', '')
+RegisterKeyMapping('toggleui', 'Abrir UI', 'keyboard', '')
 
 RegisterCommand('toggleseatbelt', function()
 	UI.Functions.ToggleSeatBelt()
 end, false)
-RegisterKeyMapping('toggleseatbelt', 'UI Toggle Seatbelt', 'keyboard', Config.SeatBeltButton)
+RegisterKeyMapping('toggleseatbelt', 'UI Cinto', 'keyboard', Config.SeatBeltButton)

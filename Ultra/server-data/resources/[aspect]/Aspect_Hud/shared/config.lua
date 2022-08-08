@@ -2,7 +2,7 @@ Config = {}
 
 Config.Framework = 'QBCore'
 
-Config.HandlerName = 'SNZ_Handler'
+Config.HandlerName = 'Aspect_UIHandler'
 
 Config.SettingsButton = 'F9'
 Config.SeatBeltButton = 'B'

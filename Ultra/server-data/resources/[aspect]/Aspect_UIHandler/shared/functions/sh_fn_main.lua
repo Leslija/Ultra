@@ -1,8 +1,8 @@
-SNZ = {}
+ASPT = {}
 
-SNZ.Functions = {}
+ASPT.Functions = {}
 
-SNZ.Functions.GenerateRandomId = function()
+ASPT.Functions.GenerateRandomId = function()
 	math.randomseed(os.time())
     local template ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
     return string.gsub(template, '[xy]', function (c)

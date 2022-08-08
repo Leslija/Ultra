@@ -1,4 +1,4 @@
-SNZ = nil
+ASPT = nil
 
 Framework = nil
 

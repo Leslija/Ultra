@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'SANDY#6078 & .zeusx#2743'
-description 'Handler for all SNZ Scripts both for ESX and QBCore'
+
+description 'Handler for all ASPT Scripts both for ESX and QBCore'
 version '1.0.0'
 
 shared_scripts {
@@ -23,5 +23,6 @@ server_scripts {
 
 server_exports {
 	'GetSharedObject',
+	'GetCoreObject',
 	'GetConfig',
 }

@@ -1,4 +1,4 @@
-SNZ = nil
+ASPT = nil
 
 Framework = nil
 
@@ -103,7 +103,7 @@ UI.Functions.CalibrateRPM = function(engine, speed, rpm, scale)
 	rpm = math.floor(scale * rpm + 0.5)
 	if rpm < 0 then
 		rpm = 0
-	elseif SNZ.PedData.Speed == 0.0 and r ~= 0 then
+	elseif ASPT.PedData.Speed == 0.0 and r ~= 0 then
 		rpm = math.random(rpm, (rpm + 50))
 	end
 	return math.floor(rpm / 10) * 10
@@ -120,42 +120,42 @@ UI.Functions.CalibrateFuel = function(vehicle)
 end
 
 UI.Functions.UpdateVehicle = function()
-	local RPM = UI.Functions.CalibrateRPM(SNZ.PedData.Engine, SNZ.PedData.Speed, SNZ.PedData.RPM, SNZ.PedData.RPMScale)
-	local Fuel = UI.Functions.CalibrateFuel(SNZ.PedData.CurrentVehicle)
+	local RPM = UI.Functions.CalibrateRPM(ASPT.PedData.Engine, ASPT.PedData.Speed, ASPT.PedData.RPM, ASPT.PedData.RPMScale)
+	local Fuel = UI.Functions.CalibrateFuel(ASPT.PedData.CurrentVehicle)
 	SendNUIMessage({
 		action = 'update', 
 		type = 'carhud', 
 		data = {
-			speed = math.floor(SNZ.PedData.Speed * UI.SpeedMultiplier), 
+			speed = math.floor(ASPT.PedData.Speed * UI.SpeedMultiplier), 
 			rpm = RPM,
 			fuel = math.floor(Fuel),
 			seatbelt = UI.SeatBelt,
-			direction = SNZ.PedData.StreetLabel.Direction,
-			street = SNZ.PedData.StreetLabel.Street
+			direction = ASPT.PedData.StreetLabel.Direction,
+			street = ASPT.PedData.StreetLabel.Street
 		}
 	})
 end
 
 UI.Functions.UpdatePlayer = function()
-	if SNZ.PedData.Stamina == nil then
-		SNZ.PedData.Stamina = 0
+	if ASPT.PedData.Stamina == nil then
+		ASPT.PedData.Stamina = 0
 	end
-	if SNZ.PedData.UnderWaterTime == nil then
-		SNZ.PedData.UnderWaterTime = 0
+	if ASPT.PedData.UnderWaterTime == nil then
+		ASPT.PedData.UnderWaterTime = 0
 	end
-	if SNZ.PedData.Health == nil then
-		SNZ.PedData.Health = 200
+	if ASPT.PedData.Health == nil then
+		ASPT.PedData.Health = 200
 	end
 	SendNUIMessage({
 		action = 'update', 
 		type = 'player', 
 		data = {
-			health = SNZ.PedData.Health - 100,
-			armour = SNZ.PedData.Armour,
+			health = ASPT.PedData.Health - 100,
+			armour = ASPT.PedData.Armour,
 			hunger = UI.StatusData.Hunger,
 			thirst = UI.StatusData.Thirst,
-			stamina = (100 - SNZ.PedData.Stamina),
-			oxygen = SNZ.PedData.UnderWaterTime * 10
+			stamina = (100 - ASPT.PedData.Stamina),
+			oxygen = ASPT.PedData.UnderWaterTime * 10
 		}
 	})
 end
@@ -203,8 +203,8 @@ UI.Functions.StartMainThread = function()
 			Citizen.Wait(100)
 			UI.ClientTick = UI.ClientTick + 1
 			if UI.Ready and UI.Enabled then
-				SNZ.PedData = SNZ.Functions.GetPedData()
-				if SNZ.PedData.InVehicle then
+				ASPT.PedData = ASPT.Functions.GetPedData()
+				if ASPT.PedData.InVehicle then
 					UI.Functions.UpdateVehicle()
 				end
 				if UI.ClientTick >= 10 then
@@ -221,7 +221,7 @@ UI.Functions.StartSideThread = function()
 		while true do
 			Citizen.Wait(0)
 			local Sleep = true
-			if SNZ.PedData.InVehicle then
+			if ASPT.PedData.InVehicle then
 				Sleep = false
 				if UI.SeatBelt then
 					DisableControlAction(0, 75)
