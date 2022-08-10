@@ -111,6 +111,7 @@ Config.Shops = {
         ['Location'] = vector3(-738.25, -1334.38, 1.6), -- Blip Location
         ['ReturnLocation'] = vector3(-714.34, -1343.31, 0.0), -- Location to return vehicle, only enables if the vehicleshop has a job owned
         ['VehicleSpawn'] = vector4(-727.87, -1353.1, -0.17, 137.09), -- Spawn location when vehicle is bought
+        ['TestDriveSpawn'] = vector4(-727.87, -1353.1, -0.17, 137.09), -- Spawn location for test drive
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-727.05, -1326.59, 0.00, 229.5), -- where the vehicle will spawn on display

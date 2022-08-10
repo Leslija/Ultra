@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 's_fuel'
-version '1.3'
-author 'github.com/loljoshie'
+version '1.0'
+
 
 client_scripts {
     '@PolyZone/client.lua',
@@ -17,7 +17,8 @@ server_scripts {
 
 shared_scripts {
 	'@qb-core/shared/locale.lua',
-	'locales/pt.lua',
+	'locales/en.lua',
+	-- 'locales/de.lua',
 	'shared/config.lua',
 }
 
@@ -27,8 +28,3 @@ exports {
 }
 
 lua54 'yes'
-
-escrow_ignore {
-    'locales/pt.lua',
-	'shared/config.lua',
-}

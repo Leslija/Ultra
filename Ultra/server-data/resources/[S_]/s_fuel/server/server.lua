@@ -11,18 +11,29 @@ end
 
 -- Server Events
 
-RegisterNetEvent("s_fuel:server:OpenMenu", function (amount, inGasStation)
+RegisterNetEvent("s_fuel:server:OpenMenu", function (amount, inGasStation, hasWeapon)
 	local src = source
 	if not src then return end
 	local player = QBCore.Functions.GetPlayer(src)
 	if not player then return end
 	local tax = GlobalTax(amount)
 	local total = math.ceil(amount + tax)
-	if inGasStation == true then
+	if inGasStation == true and not hasWeapon then
 		TriggerClientEvent('qb-menu:client:openMenu', src, {
 			{
-				header = 'Combustível',
-				txt = 'Custo total vai ser: '..total..'€.' ,
+				header = 'Gas Station',
+				txt = 'The total cost is going to be: $'..total..' including taxes.' ,
+				params = {
+					event = "s_fuel:client:RefuelVehicle",
+					args = total,
+				}
+			},
+		})
+	else
+		TriggerClientEvent('qb-menu:client:openMenu', src, {
+			{
+				header = 'Gas Station',
+				txt = 'Refuel from jerry can' ,
 				params = {
 					event = "s_fuel:client:RefuelVehicle",
 					args = total,
@@ -30,18 +41,13 @@ RegisterNetEvent("s_fuel:server:OpenMenu", function (amount, inGasStation)
 			},
 		})
 	end
-		if inGasStation == false then
-			TriggerClientEvent('qb-menu:client:openMenu', src, {
-				{
-					header = 'Combustível',
-					txt = 'Custo total vai ser: '..total..'€.' ,
-					params = {
-					event = "s_fuel:client:RefuelVehicle",
-					args = total,
-				}
-			},
-		})
-	end
+end)
+
+QBCore.Functions.CreateCallback('s_fuel:server:fuelCan', function(source, cb)
+	local src = source
+	local Player = QBCore.Functions.GetPlayer(src)
+	local itemData = Player.Functions.GetItemByName("weapon_petrolcan")
+    cb(itemData)
 end)
 
 RegisterNetEvent("s_fuel:server:PayForFuel", function (amount)
