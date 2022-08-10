@@ -6,7 +6,8 @@
         "GetPlayerIdentifiers",
         "Wait",
         "RegisterNetEvent",
-        "TriggerClientEvent"
+        "TriggerClientEvent",
+        "TriggerServerEvent"
     ],
     "Lua.workspace.checkThirdParty": false
 }

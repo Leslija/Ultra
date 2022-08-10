@@ -10,8 +10,7 @@ this_is_a_map 'yes'
 data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
 
 files {
-         "nutt_timecycle_mods_1.xml",
-
+  "nutt_timecycle_mods_1.xml",
 }
 
 -- BENNYS
@@ -27,7 +26,7 @@ files {
 data_file 'DLC_ITYP_REQUEST' 'k4mb1_ornate_bank.ytyp'
 
 client_scripts {
-  'client.lua'
+  'client/client.lua'
 }
 
 -- ESQUADRA
@@ -44,4 +43,8 @@ client_script {
     "gabz_mrpd_entitysets.lua"
 }
 
+-- CASINO
 
+files{
+  "peds.meta",
+}

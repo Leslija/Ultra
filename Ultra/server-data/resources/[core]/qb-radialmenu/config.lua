@@ -82,6 +82,7 @@ Config.MenuItems = {
             }
         }
     },
+    
     [2] = {
         id = 'emotePanel',
         title = 'Animações',
@@ -289,6 +290,14 @@ Config.MenuItems = {
             }
         }
     },
+    -- [4] =  {
+    --     id = 'bed:up',
+    --     title = 'Levantar',
+    --     icon = 'hand-point-up',
+    --     type = 'client',
+    --     event = 'bed:up',
+    --     shouldClose = true
+    -- },
 }
 
 Config.VehicleDoors = {
@@ -592,12 +601,19 @@ Config.JobInteractions = {
             type = 'client',
             event = 'qb-houses:client:ResetHouse',
             shouldClose = true
-        }, {
-            id = 'takedriverlicense',
-            title = 'Revogar Carta de Condução',
+        },{
+            id = 'resethouse',
+            title = 'Trancar a casa',
+            icon = 'key',
+            type = 'client',
+            event = 'qb-houses:client:ResetHouse',
+            shouldClose = true
+        },{
+            id = 'showid',
+            title = 'Mostrar Distintivo',
             icon = 'id-card',
             type = 'client',
-            event = 'police:client:SeizeDriverLicense',
+            event = 'qb-radialmenu:client:showid',
             shouldClose = true
         }, {
             id = 'policeinteraction',

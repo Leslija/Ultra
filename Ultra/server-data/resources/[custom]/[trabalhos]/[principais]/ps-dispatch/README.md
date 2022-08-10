@@ -99,7 +99,8 @@ local function FleecaBankRobbery(camId)
         dispatchMessage = "Fleeca Bank Robbery", -- message
         job = {"police"} -- jobs that will get the alerts
     })
-end exports('FleecaBankRobbery', FleecaBankRobbery)
+end 
+exports('FleecaBankRobbery', FleecaBankRobbery)
 ```
 
 2. Add Dispatch Code in sv_dispatchcodes.lua for the particular robbery to display the blip

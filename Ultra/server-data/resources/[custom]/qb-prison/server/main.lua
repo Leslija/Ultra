@@ -20,7 +20,10 @@ RegisterNetEvent('prison:server:SaveJailItems', function()
     if not Player then return end
     if not Player.PlayerData.metadata["jailitems"] or not next(Player.PlayerData.metadata["jailitems"]) then
         Player.Functions.SetMetaData("jailitems", Player.PlayerData.items)
-        Player.Functions.AddMoney('cash', 80)
+        --Player.Functions.AddMoney('cash', 80)
+        local citizenid = Player.PlayerData.citizenid
+        --local from = Player.PlayerData.job.name -- job name / shown as 'from' in transaction history
+        TriggerEvent('aspect_paycheck:server:AddMoneyToPayCheck', citizenid, 80, "Prisão")
         Wait(2000)
         Player.Functions.ClearInventory()
     end

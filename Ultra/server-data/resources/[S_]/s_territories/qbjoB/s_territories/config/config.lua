@@ -1,10 +1,10 @@
 Config = {}
 --##FRAMEWORK
-Config.Framework = 'ESX' -- 'ESX' or 'QBCore'.
+Config.Framework = 'QBCore' -- 'ESX' or 'QBCore'.
 Config.getSharedObject = "esx:getSharedObject" --Change if you use an ESX Custom or ignore it.
 --##MENU AND EYE-TARGET
-Config.MenuExport = 's_menu' -- For QBCore use qb-menu
-Config.MenuKeyboard = 's_keyboard' -- For QBCore use qb-input
+Config.MenuExport = 'qb-menu' -- For QBCore use qb-menu
+Config.MenuKeyboard = 'qb-input' -- For QBCore use qb-input
 Config.TargetType = 's_target' -- For QBCore use s_target
 Config.Target = false -- Enable eye-target system
 --##TERRITORIES

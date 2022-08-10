@@ -165,11 +165,43 @@ end
 
 -- Paychecks (standalone - don't touch)
 
+-- function PaycheckInterval()
+--     if next(QBCore.Players) then
+--         for _, Player in pairs(QBCore.Players) do
+--             if Player then
+--                 local payment = Player.PlayerData.job.payment
+--                 if Player.PlayerData.job and payment > 0 and (QBShared.Jobs[Player.PlayerData.job.name].offDutyPay or Player.PlayerData.job.onduty) then
+--                     if QBCore.Config.Money.PayCheckSociety then
+--                         local account = exports['qb-management']:GetAccount(Player.PlayerData.job.name)
+--                         if account ~= 0 then -- Checks if player is employed by a society
+--                             if account < payment then -- Checks if company has enough money to pay society
+--                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('error.company_too_poor'), 'error')
+--                             else
+--                                 Player.Functions.AddMoney('bank', payment)
+--                                 exports['qb-management']:RemoveMoney(Player.PlayerData.job.name, payment)
+--                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+--                             end
+--                         else
+--                             Player.Functions.AddMoney('bank', payment)
+--                             TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+--                         end
+--                     else
+--                         Player.Functions.AddMoney('bank', payment)
+--                         TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+--                     end
+--                 end
+--             end
+--         end
+--     end
+--     SetTimeout(QBCore.Config.Money.PayCheckTimeOut * (60 * 1000), PaycheckInterval)
+-- end
 function PaycheckInterval()
     if next(QBCore.Players) then
         for _, Player in pairs(QBCore.Players) do
             if Player then
                 local payment = Player.PlayerData.job.payment
+                local citizenid = Player.PlayerData.citizenid
+
                 if Player.PlayerData.job and payment > 0 and (QBShared.Jobs[Player.PlayerData.job.name].offDutyPay or Player.PlayerData.job.onduty) then
                     if QBCore.Config.Money.PayCheckSociety then
                         local account = exports['qb-management']:GetAccount(Player.PlayerData.job.name)
@@ -177,17 +209,14 @@ function PaycheckInterval()
                             if account < payment then -- Checks if company has enough money to pay society
                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('error.company_too_poor'), 'error')
                             else
-                                Player.Functions.AddMoney('bank', payment)
+                                TriggerEvent('aspect_paycheck:server:AddMoneyToPayCheck', citizenid,payment,Player.PlayerData.job.name)
                                 exports['qb-management']:RemoveMoney(Player.PlayerData.job.name, payment)
-                                TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
                             end
                         else
-                            Player.Functions.AddMoney('bank', payment)
-                            TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+                            TriggerEvent('aspect_paycheck:server:AddMoneyToPayCheck', citizenid,payment,Player.PlayerData.job.name)
                         end
                     else
-                        Player.Functions.AddMoney('bank', payment)
-                        TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+                        TriggerEvent('aspect_paycheck:server:AddMoneyToPayCheck', citizenid,payment,Player.PlayerData.job.name)
                     end
                 end
             end
@@ -195,7 +224,6 @@ function PaycheckInterval()
     end
     SetTimeout(QBCore.Config.Money.PayCheckTimeOut * (60 * 1000), PaycheckInterval)
 end
-
 -- Callbacks
 
 function QBCore.Functions.CreateCallback(name, cb)

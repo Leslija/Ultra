@@ -12,6 +12,10 @@ RegisterNetEvent('qb-radialmenu:client:animacoes', function()
     ExecuteCommand("emotePanel")
 end)
 
+RegisterNetEvent('qb-radialmenu:client:showid', function()
+    ExecuteCommand("showid")
+end)
+
 -- Functions
 
 local function deepcopy(orig) -- modified the deep copy function from http://lua-users.org/wiki/CopyTable

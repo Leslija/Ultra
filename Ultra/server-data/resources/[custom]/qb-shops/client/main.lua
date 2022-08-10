@@ -60,15 +60,13 @@ local function openShop(shop, data)
     local products = data.products
     local ShopItems = {}
     ShopItems.items = {}
-    QBCore.Functions.TriggerCallback("qb-shops:server:getLicenseStatus", function(licenseItem)
+    QBCore.Functions.TriggerCallback("qb-shops:server:getLicenseStatus", function(hasLicense, hasLicenseItem)
         ShopItems.label = data["label"]
         if data.type == "weapon" then
-            if licenseItem then
+            if hasLicense and hasLicenseItem then
                 ShopItems.items = SetupItems(shop)
                 QBCore.Functions.Notify(Lang:t("success.dealer_verify"), "success")
                 Wait(500)
-                TriggerServerEvent("inventory:server:OpenInventory", "shop", "Itemshop_" .. shop, ShopItems)
-
             else
                 for i = 1, #products do
                     if not products[i].requiredJob then
@@ -95,7 +93,7 @@ local function openShop(shop, data)
             ShopItems.items[k].slot = k
         end
         ShopItems.slots = 30
-       -- TriggerServerEvent("inventory:server:OpenInventory", "shop", "Itemshop_" .. shop, ShopItems)
+        TriggerServerEvent("inventory:server:OpenInventory", "shop", "Itemshop_" .. shop, ShopItems)
     end)
 end
 
@@ -125,7 +123,7 @@ local function createPeds()
     for k, v in pairs(Config.Locations) do
         if not ShopPed[k] then ShopPed[k] = {} end
         local current = v["ped"]
-        current = type(current) == 'string' and GetHashKey(current) or current
+        current = type(current) == 'string' and joaat(current) or current
         RequestModel(current)
 
         while not HasModelLoaded(current) do
@@ -158,7 +156,7 @@ local function createPeds()
 
     if not ShopPed["casino"] then ShopPed["casino"] = {} end
     local current = Config.SellCasinoChips.ped
-    current = type(current) == 'string' and GetHashKey(current) or current
+    current = type(current) == 'string' and joaat(current) or current
     RequestModel(current)
 
     while not HasModelLoaded(current) do

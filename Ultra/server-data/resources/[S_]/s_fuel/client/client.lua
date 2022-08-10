@@ -51,13 +51,13 @@ CreateThread(function()
 		"seat_dside_r",
 		"engine",
 		}
-	exports['qb-target']:AddTargetBone(bones, {
+	exports['s_target']:AddTargetBone(bones, {
 		options = {
 		{
 			type = "client",
 			event = "s_fuel:client:SendMenuToServer",
 			icon = "fas fa-gas-pump",
-			label = "Refuel Vehicle",
+			label = "Abastecer",
 			canInteract = function()
 				return inGasStation or HasPedGotWeapon(PlayerPedId(), 883325847)
 			end
@@ -177,7 +177,7 @@ RegisterNetEvent('s_fuel:client:buyCanMenu', function()
     exports['qb-menu']:openMenu({
         {
             header = "Gas Station",
-            txt = 'The total cost is going to be: $'..Config.canCost..' including taxes.',
+            txt = 'Custo total: '..Config.canCost..'€ including taxes.',
             params = {
                 event = "s_fuel:client:buyCan",
             }
@@ -211,7 +211,7 @@ RegisterNetEvent('s_fuel:client:refuelCanMenu', function()
 		exports['qb-menu']:openMenu({
 			{
 				header = "Gas Station",
-				txt = "The total cost of refueling the Gas can will be "..price.."$", 
+				txt = "O custo total ira ser "..price.."€", 
 				params = {
 					event = "s_fuel:client:refuelCan",
 				}
@@ -300,11 +300,11 @@ RegisterNetEvent('s_fuel:client:RefuelVehicle', function(refillCost)
 		local weapon = GetSelectedPedWeapon(PlayerPedId())
 		local ammo = GetAmmoInPedWeapon(PlayerPedId(), weapon)
 		if fuelToAdd == 0 then
-			QBCore.Functions.Notify("Vehicle already full", "error")
+			QBCore.Functions.Notify("Tanque cheio", "error")
 			return
 		end
 		if ammo <= 40 then
-			QBCore.Functions.Notify("No fuel in gas can", "error")
+			QBCore.Functions.Notify("Jerry Can Vazio", "error")
 		else
 			RequestAnimDict("weapon@w_sp_jerrycan")
 			while not HasAnimDictLoaded('weapon@w_sp_jerrycan') do 
@@ -355,7 +355,7 @@ RegisterNetEvent('s_fuel:client:RefuelVehicle', function(refillCost)
 						return
 					end
 				end
-				QBCore.Functions.Progressbar("refuel-car", "Refueling", time, false, true, {
+				QBCore.Functions.Progressbar("refuel-car", "A Abastecer", time, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -377,20 +377,20 @@ end)
 
 -- Target Export
 
-exports['qb-target']:AddTargetModel(props, {
+exports['s_target']:AddTargetModel(props, {
 	options = {
 		{
 			type = "client",
 			event = "s_fuel:client:buyCanMenu",
 			icon = "fas fa-burn",
-			label = "Buy Jerry Can",
+			label = "Comprar Jerry Can",
 			
 		},
 		{
 			type = "client",
 			event = "s_fuel:client:refuelCanMenu",
 			icon = "fas fa-gas-pump",
-			label = "Refuel Jerry Can",
+			label = "Encher Jerry Can",
 			canInteract = function(entity)
 				return isHoldingWeapon(GetHashKey("weapon_petrolcan"))
 			end,
