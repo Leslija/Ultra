@@ -257,17 +257,17 @@ function PlayAnimOnPlayer(object,vertx,verty,vertz,dir, isBed, ped, objectcoords
 end
 
 CreateThread(function()
-	-- exports['s_target']:AddTargetModel(beds, {
-	-- 	options = {
-	-- 		{
-	-- 			event = "beds:Menu",
-	-- 			icon = "fas fa-bed",
-	-- 			label = "Opções",
-	-- 		},
+	exports['s_target']:AddTargetModel(beds, {
+		options = {
+			{
+				event = "beds:Menu",
+				icon = "fas fa-bed",
+				label = "Opções",
+			},
 			
-	-- 	},
-	-- 	distance = 2.5,
-	-- })
+		},
+		distance = 2.5,
+	})
 
 	RegisterNetEvent('beds:Menu', function(data)
 		exports['qb-menu']:openMenu({

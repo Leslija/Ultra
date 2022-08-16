@@ -440,7 +440,7 @@ RegisterNetEvent('qb-storerobbery:client:robberyCall', function(_, _, _, coords)
     if PlayerJob.name == "police" and onDuty then
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
         --TriggerServerEvent('police:server:policeAlert', 'Assalto A Loja')
-        exports['ps-dispatch']:StoreRobbery()
+        exports['ps-dispatch']:StoreRobbery(camId)
         local transG = 250
         local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
         SetBlipSprite(blip, 458)

@@ -130,8 +130,8 @@ Config.objects = {
 		[125] = {object="prop_off_chair_03", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
 		[126] = {object="prop_off_chair_05", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
 		[127] = {object="v_club_officechair", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
-		[128] = {object="v_ilev_leath_chr", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
-		[129] = {object="v_corp_offchair", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
+		--[138] = {object="v_ilev_leath_chr", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
+		--[139] = {object="v_corp_offchair", verticalOffsetX=0.0, verticalOffsetY=0.0, verticalOffsetZ=-0.4, direction=168.0, bed=false},
 		[130] = {object="Prop_Off_Chair_01", verticalOffsetX=0.0, verticalOffsetY=-0.1, verticalOffsetZ=-0.5, direction=180.0, bed=false},
 		[131] = {object="ba_prop_battle_club_chair_01", verticalOffsetX=-0.0, verticalOffsetY=-0.00, verticalOffsetZ=0.1, direction=168.0, bed=false},
 		[132] = {object="v_res_m_dinechair", verticalOffsetX=0.0, verticalOffsetY=-0.0, verticalOffsetZ=-0.5, direction=168.0, bed=false},
@@ -144,5 +144,3 @@ Config.objects = {
 		[139] = {object="v_ilev_m_dinechair", verticalOffsetX=0.1, verticalOffsetY=0.0, verticalOffsetZ=-0.5, direction=168.0, bed=false},
 	}
 }
-
-

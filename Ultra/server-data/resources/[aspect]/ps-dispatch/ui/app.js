@@ -51,17 +51,17 @@ function timeAgo(dateParam) {
     const isThisYear = today.getFullYear() === date.getFullYear();
 
     if (seconds < 5) {
-        return 'Just Now';
+        return 'Agora';
     } else if (seconds < 60) {
-        return `${seconds} Seconds ago`;
+        return `${seconds} Segundos atras`;
     } else if (seconds < 90) {
-        return 'About a minute ago';
+        return 'Minuto atras';
     } else if (minutes < 60) {
-        return `${minutes} Minutes ago`;
+        return `${minutes} Minutos atras`;
     } else if (isToday) {
-        return getFormattedDate(date, 'Today');
+        return getFormattedDate(date, 'Hoje');
     } else if (isYesterday) {
-        return getFormattedDate(date, 'Yesterday');
+        return getFormattedDate(date, 'Ontem');
     } else if (isThisYear) {
         return getFormattedDate(date, false, true);
     }

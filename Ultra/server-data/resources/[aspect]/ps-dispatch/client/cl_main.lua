@@ -145,17 +145,17 @@ function vehicleData(vehicle)
 end
 
 function GetPedGender()
-    local gender = "Male"
-    if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "Female" end
+    local gender = "Masculino"
+    if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "Femenino" end
     return gender
 end
 
 function getCardinalDirectionFromHeading()
     local heading = GetEntityHeading(PlayerPedId())
-    if heading >= 315 or heading < 45 then return "North Bound"
-    elseif heading >= 45 and heading < 135 then return "West Bound"
-    elseif heading >=135 and heading < 225 then return "South Bound"
-    elseif heading >= 225 and heading < 315 then return "East Bound" end
+    if heading >= 315 or heading < 45 then return "Norte"
+    elseif heading >= 45 and heading < 135 then return "oeste"
+    elseif heading >=135 and heading < 225 then return "Sul"
+    elseif heading >= 225 and heading < 315 then return "Este" end
 end
 
 function IsPoliceJob(job)
@@ -192,17 +192,17 @@ RegisterNetEvent('dispatch:manageNotifs', function(sentSetting)
     if wantedSetting == "on" then
         disableNotis = false
         disableNotifSounds = false
-        QBCore.Functions.Notify("Dispatch enabled", "success")
+        QBCore.Functions.Notify("Dispatch ON", "success")
     elseif wantedSetting == "off" then
         disableNotis = true
         disableNotifSounds = true
-        QBCore.Functions.Notify("Dispatch disabled", "success")
+        QBCore.Functions.Notify("Dispatch OFF", "success")
     elseif wantedSetting == "mute" then
         disableNotis = false
         disableNotifSounds = true
-        QBCore.Functions.Notify("Dispatch muted", "success")
+        QBCore.Functions.Notify("Dispatch mute", "success")
     else
-        QBCore.Functions.Notify('Please choose to have dispatch as "on", "off" or "mute".', "success")
+        QBCore.Functions.Notify('Escolhe entre "on", "off" or "mute".', "success")
 
     end
 end)
@@ -303,7 +303,7 @@ RegisterNetEvent('dispatch:getCallResponse', function(message)
         data = {
             dispatchCode = 'RSP',
             priority = 1,
-            dispatchMessage = "Call Response",
+            dispatchMessage = "Responder",
             information = message
         },
         timer = 10000,
@@ -323,5 +323,5 @@ RegisterNetEvent("ps-dispatch:client:clearAllBlips", function()
 	for k, v in pairs(blips) do
 		RemoveBlip(v)
 	end
-	QBCore.Functions.Notify('All dispatch blips cleared', "success")
+	QBCore.Functions.Notify('Todas as chamadas Limpas', "success")
 end)

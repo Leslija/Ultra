@@ -4,7 +4,7 @@ Config.Data = {}
 Config.Data.DisplayTimer = 3
 Config.Data.DisplayDistance = 4.0
 Config.Data.Departments = { 
-    ["police"] = {
+    ["lspd"] = {
         label = "Departamento Policia Los Santos",
         background_image = "https://static.wikia.nocookie.net/gtawiki/images/2/21/Lossantos_seal.png",
         background_color = "rgb(38, 42, 78)",
@@ -41,13 +41,11 @@ Config.Data.Departments = {
 Config.Functions = {}
 
 Config.Functions.CanDisplayIdentity = function() -- Client Check to see if the player can show their identity
-    --[[ Example:
-        if (PlayerData.job.name ~= "police") then
-            return false 
-        else 
-            return true
-        end
-    ]] 
+        -- if (PlayerData.job.name ~= "lspd" ) then
+        --     return false 
+        -- else 
+        --     return true
+        -- end
     return true
 end
 

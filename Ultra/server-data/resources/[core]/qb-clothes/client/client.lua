@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+qb-core = exports['qb-core']:GetCoreObject()
 
 local LastZone = nil
 local CurrentAction = nil
@@ -13,7 +13,7 @@ local PlayerGang = {}
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
         Wait(200)
-        PlayerData = QBCore.Functions.GetPlayerData()
+        PlayerData = qb-core.Functions.GetPlayerData()
 		PlayerGang = PlayerData.gang
 		PlayerJob = PlayerData.job
     end
@@ -34,10 +34,10 @@ end
 
 -- Net Events
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    QBCore.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
+RegisterNetEvent('qb-core:Client:OnPlayerLoaded', function()
+    qb-core.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
 		exports['qb-clothes']:setPlayerAppearance(appearance)
-		PlayerData = QBCore.Functions.GetPlayerData()
+		PlayerData = qb-core.Functions.GetPlayerData()
 		PlayerGang = PlayerData.gang
 		PlayerJob = PlayerData.job
 			if Config.Debug then  -- This will detect if the player model is set as "player_zero" aka michael. Will then set the character as a freemode ped based on gender.
@@ -51,7 +51,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 end)
 
 RegisterNetEvent('qb-clothes:client:CreateFirstCharacter', function()  -- Event renamed so you dont need to change anything for this to work... hopefully....
-	QBCore.Functions.GetPlayerData(function(PlayerData)
+	qb-core.Functions.GetPlayerData(function(PlayerData)
 		local skin = 'mp_m_freemode_01'
 		if PlayerData.charinfo.gender == 1 then
             skin = "mp_f_freemode_01" 
@@ -212,7 +212,7 @@ RegisterNetEvent('qb-clothes:saveOutfit', function()
 		local pedProps = exports['qb-clothes']:getPedProps(playerPed)
 		Wait(500)
 		TriggerServerEvent('qb-clothes:saveOutfit', keyboard.input, pedModel, pedComponents, pedProps)
-		QBCore.Functions.Notify('Outfit '..keyboard.input.. ' guardado!', 'success')
+		qb-core.Functions.Notify('Outfit '..keyboard.input.. ' guardado!', 'success')
 	end
 end)
 
@@ -245,7 +245,7 @@ end)
 RegisterNetEvent('qb-clothes:deleteOutfit', function(id)
 	TriggerServerEvent('qb-clothes:deleteOutfit', id)
 	-- TriggerEvent('qb-clothes:clothingShop')
-	QBCore.Functions.Notify('Outfit Eliminado', 'error')
+	qb-core.Functions.Notify('Outfit Eliminado', 'error')
 end)
 
 RegisterNetEvent("qb-clothes:purchase", function(bool)
@@ -525,7 +525,7 @@ end)
 -- Command(s)
 
 RegisterCommand('reloadskin', function()
-	QBCore.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
+	qb-core.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
 		exports['qb-clothes']:setPlayerAppearance(appearance)
 	end)
 	for k, v in pairs(GetGamePool('CObject')) do
@@ -814,7 +814,7 @@ local skinData = {
 } 
 
 RegisterNetEvent('qb-clothes:client:reloadSkin', function()
-	QBCore.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
+	qb-core.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
 		exports['qb-clothes']:setPlayerAppearance(appearance)
 	end)
 	for k, v in pairs(GetGamePool('CObject')) do
@@ -880,13 +880,13 @@ RegisterNetEvent('qb-clothing:client:loadOutfit', function(oData)
 
     -- Accessory
     if data["accessory"] ~= nil then
-        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
+        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, data["accessory"].item, data["accessory"].texture, 0)
         end
     else
-        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
+        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, -1, 0, 2)
@@ -985,13 +985,13 @@ RegisterNetEvent('qb-clothing:client:loadWorkOutfit', function(oDati)
 
     -- Accessory
     if data["accessory"] ~= nil then
-        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
+        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, data["accessory"].item, data["accessory"].texture, 0)
         end
     else
-        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
+        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, -1, 0, 2)
@@ -1037,11 +1037,11 @@ RegisterNetEvent('qb-clothing:client:loadWorkOutfit', function(oDati)
 	TriggerEvent("qb-clothes:pickDefOutfitApp", oDati.vData)
 end)
 
-RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
+RegisterNetEvent('qb-core:Client:OnJobUpdate', function(JobInfo)
     PlayerJob = JobInfo
 end)
 
-RegisterNetEvent('QBCore:Client:OnGangUpdate', function(InfoGang)
+RegisterNetEvent('qb-core:Client:OnGangUpdate', function(InfoGang)
     PlayerGang = InfoGang
 end)
 
@@ -1078,7 +1078,7 @@ CreateThread(function()
                                 DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Roupeiro')
                                 if IsControlJustPressed(0, 38) then -- E
                                     gender = "male"
-                                    if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
+                                    if qb-core.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
 									TriggerEvent("qb-clothing:client:openGuardaroba", Config.Outfits[PlayerJob.name][gender])
                                 end
                             else
@@ -1086,7 +1086,7 @@ CreateThread(function()
                                     DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Roupeiro')
                                     if IsControlJustPressed(0, 38) then -- E
                                         gender = "male"
-                                        if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
+                                        if qb-core.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
 										TriggerEvent("qb-clothing:client:openGuardaroba", Config.Outfits[PlayerGang.name][gender])
                                     end
                                 end
