@@ -75,6 +75,7 @@ RegisterNetEvent('apartments:server:CreateApartment', function(type, label)
     TriggerClientEvent("apartments:client:SetHomeBlip", src, type)
 end)
 
+
 RegisterNetEvent('apartments:server:UpdateApartment', function(type, label)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)

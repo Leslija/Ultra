@@ -1,4 +1,4 @@
-qb-core = exports['qb-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 
 local LastZone = nil
 local CurrentAction = nil
@@ -13,7 +13,7 @@ local PlayerGang = {}
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
         Wait(200)
-        PlayerData = qb-core.Functions.GetPlayerData()
+        PlayerData = QBCore.Functions.GetPlayerData()
 		PlayerGang = PlayerData.gang
 		PlayerJob = PlayerData.job
     end
@@ -34,10 +34,10 @@ end
 
 -- Net Events
 
-RegisterNetEvent('qb-core:Client:OnPlayerLoaded', function()
-    qb-core.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+    QBCore.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
 		exports['qb-clothes']:setPlayerAppearance(appearance)
-		PlayerData = qb-core.Functions.GetPlayerData()
+		PlayerData = QBCore.Functions.GetPlayerData()
 		PlayerGang = PlayerData.gang
 		PlayerJob = PlayerData.job
 			if Config.Debug then  -- This will detect if the player model is set as "player_zero" aka michael. Will then set the character as a freemode ped based on gender.
@@ -51,7 +51,7 @@ RegisterNetEvent('qb-core:Client:OnPlayerLoaded', function()
 end)
 
 RegisterNetEvent('qb-clothes:client:CreateFirstCharacter', function()  -- Event renamed so you dont need to change anything for this to work... hopefully....
-	qb-core.Functions.GetPlayerData(function(PlayerData)
+	QBCore.Functions.GetPlayerData(function(PlayerData)
 		local skin = 'mp_m_freemode_01'
 		if PlayerData.charinfo.gender == 1 then
             skin = "mp_f_freemode_01" 
@@ -84,19 +84,19 @@ end)
 RegisterNetEvent('qb-clothes:clothingShop', function()
 	exports['qb-menu']:openMenu({
         {
-            header = "👚 | Loja de Roupa",
+            header = "👚 | Clothing Store Options",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            header = "Comprar Roupas",
-			txt = "Escolhe uma nova roupa para usares",
+            header = "Comprar roupas",
+			txt = "Escolhe da grande variadade que temos",
             params = {
                 event = "qb-clothes:clothingMenu",
             }
         },
 		{
             header = "Mudar Outfit",
-			txt = "Escolhe um outfit que já compraste",
+			txt = "Ourfits guardados",
             params = {
                 event = "qb-clothes:pickNewOutfit",
                 args = {
@@ -107,14 +107,14 @@ RegisterNetEvent('qb-clothes:clothingShop', function()
         },
 		{
             header = "Guardar Novo Outfit",
-			txt = "Guardar um novo outfit para usares mais tarde",
+			txt = "Guarda um novo Outfit",
             params = {
                 event = "qb-clothes:saveOutfit",
             }
         },
 		{
-            header = "Apagar Outfit",
-			txt = "Yeah... Eu também não gostei",
+            header = "Apgar Outfit",
+			txt = "Yaaa... Não gostas deste",
             params = {
                 event = "qb-clothes:deleteOutfitMenu",
                 args = {
@@ -133,7 +133,7 @@ RegisterNetEvent('qb-clothes:pickNewOutfit', function(data)
 	Wait(150)
 	local outfitMenu = {
         {
-            header = '< Voltar',
+            header = '< Go Back',
             params = {
                 event = 'qb-clothes:clothingShop'
             }
@@ -193,11 +193,11 @@ end)
 
 RegisterNetEvent('qb-clothes:saveOutfit', function()
 	local keyboard = exports['qb-input']:ShowInput({
-        header = "Nome outfit",
-        submitText = "Criar Outfit",
+        header = "Name your outfit",
+        submitText = "Create Outfit",
         inputs = {
             {
-                text = "Nome Outfit",
+                text = "Outfit Name",
                 name = "input",
                 type = "text",
                 isRequired = true
@@ -212,7 +212,7 @@ RegisterNetEvent('qb-clothes:saveOutfit', function()
 		local pedProps = exports['qb-clothes']:getPedProps(playerPed)
 		Wait(500)
 		TriggerServerEvent('qb-clothes:saveOutfit', keyboard.input, pedModel, pedComponents, pedProps)
-		qb-core.Functions.Notify('Outfit '..keyboard.input.. ' guardado!', 'success')
+		QBCore.Functions.Notify('Outfit '..keyboard.input.. ' salvato!', 'success')
 	end
 end)
 
@@ -223,7 +223,7 @@ RegisterNetEvent('qb-clothes:deleteOutfitMenu', function(data)
 	Wait(150)
 	local DeleteMenu = {
         {
-            header = '< Voltar',
+            header = '< Go Back',
             params = {
                 event = 'qb-clothes:clothingShop'
             }
@@ -231,8 +231,8 @@ RegisterNetEvent('qb-clothes:deleteOutfitMenu', function(data)
     }
     for i=1, #allMyOutfits, 1 do
         DeleteMenu[#DeleteMenu + 1] = {
-            header = 'Apagar "'..allMyOutfits[i].name..'"',
-			txt = 'Ação irreversível!',
+            header = 'Delete "'..allMyOutfits[i].name..'"',
+			txt = 'You will never be able to get this back!',
             params = {
 				event = 'qb-clothes:deleteOutfit',
 				args = allMyOutfits[i].id
@@ -245,7 +245,7 @@ end)
 RegisterNetEvent('qb-clothes:deleteOutfit', function(id)
 	TriggerServerEvent('qb-clothes:deleteOutfit', id)
 	-- TriggerEvent('qb-clothes:clothingShop')
-	qb-core.Functions.Notify('Outfit Eliminado', 'error')
+	QBCore.Functions.Notify('Outfit Eliminato', 'error')
 end)
 
 RegisterNetEvent("qb-clothes:purchase", function(bool)
@@ -306,7 +306,7 @@ end)
 
 -- Backwords Events so you dont need to replace these
 
-RegisterNetEvent('qb-clothing:client:openMenu', function()  -- Admin Menu clothing event
+RegisterNetEvent('qb-clothes:client:openMenu', function()  -- Admin Menu clothing event
 	Wait(500)
 	local config = {
 		ped = true,
@@ -331,15 +331,15 @@ RegisterNetEvent('qb-clothing:client:openMenu', function()  -- Admin Menu clothi
 	end, config)
 end)
 
-RegisterNetEvent('qb-clothing:client:openOutfitMenu', function()  -- Name is so that you dont have to replace the event, Used in Appartments, Bossmenu, etc...
+RegisterNetEvent('qb-clothes:client:openOutfitMenu', function()  -- Name is so that you dont have to replace the event, Used in Appartments, Bossmenu, etc...
 	exports['qb-menu']:openMenu({
         {
-            header = "👔 | Outfit Opções",
+            header = "👔 | Outfit Options",
             isMenuHeader = true,
         },
 		{
-            header = "Mudar Outfit",
-			txt = "Escolhe um dos outfits guardados",
+            header = "Change Outfit",
+			txt = "Pick from any of your currently saved outfits",
             params = {
                 event = "qb-clothes:pickNewOutfitApp",
                 args = {
@@ -349,8 +349,8 @@ RegisterNetEvent('qb-clothing:client:openOutfitMenu', function()  -- Name is so 
             }
         },
 		{
-            header = "Guardar Novo Outfit",
-			txt = "Guardar um outfit para usares mais tarde",
+            header = "Save New Outfit",
+			txt = "Save a new outfit you can use later on",
             params = {
                 event = "qb-clothes:saveOutfit",
             }
@@ -358,23 +358,23 @@ RegisterNetEvent('qb-clothing:client:openOutfitMenu', function()  -- Name is so 
     })
 end)
 
-RegisterNetEvent('qb-clothing:client:openGuardaroba', function(datiwork)  -- Name is so that you dont have to replace the event, Used in Appartments, Bossmenu, etc...
+RegisterNetEvent('qb-clothes:client:openGuardaroba', function(datiwork)  -- Name is so that you dont have to replace the event, Used in Appartments, Bossmenu, etc...
 	exports['qb-menu']:openMenu({
         {
-            header = "👔 | Outfit Menu",
+            header = "👔 | Outfit Menù",
             isMenuHeader = true,
         },
 		{
-            header = "Mudar Outfit",
-			txt = "Escolhe um dos outfits guardados",
+            header = "Change Outfit",
+			txt = "Pick from any of your currently saved outfits",
             params = {
                 event = "qb-clothes:pickNewOutfitWork",
                 args = datiwork
             }
         },
 		{
-            header = "Armário",
-			txt = "Seleciona um outfit já predefinidos",
+            header = "Wardrobe",
+			txt = "Select a predefined outfit from the wardrobe",
             params = {
                 event = "qb-clothes:pickDefOutfitApp",
                 args = datiwork,
@@ -387,9 +387,9 @@ RegisterNetEvent('qb-clothes:pickDefOutfitApp', function(datiwork)
 	Wait(150)
 	local outfitDefMenu = {
         {
-            header = '< Voltar',
+            header = '< Go Back',
             params = {
-                event = 'qb-clothing:client:openGuardaroba',
+                event = 'qb-clothes:client:openGuardaroba',
 				args = datiwork
             }
         }
@@ -398,7 +398,7 @@ RegisterNetEvent('qb-clothes:pickDefOutfitApp', function(datiwork)
         outfitDefMenu[#outfitDefMenu + 1] = {
             header = v.outfitLabel,
             params = {
-                event = 'qb-clothing:client:loadWorkOutfit',
+                event = 'qb-clothes:client:loadWorkOutfit',
                 args = { oDati = v, vData = datiwork }
             }
         }
@@ -411,9 +411,9 @@ RegisterNetEvent('qb-clothes:pickNewOutfitWork', function(datiwork)
 	Wait(150)
 	local outfitMenu = {
         {
-            header = '< Voltar',
+            header = '< Go Back',
             params = {
-                event = 'qb-clothing:client:openGuardaroba',
+                event = 'qb-clothes:client:openGuardaroba',
 				args = datiwork
             }
         }
@@ -441,9 +441,9 @@ RegisterNetEvent('qb-clothes:pickNewOutfitApp', function(data)
 	Wait(150)
 	local outfitMenu = {
         {
-            header = '< Voltar',
+            header = '< Go Back',
             params = {
-                event = 'qb-clothing:client:openOutfitMenu'
+                event = 'qb-clothes:client:openOutfitMenu'
             }
         }
     }
@@ -471,7 +471,7 @@ RegisterNetEvent('qb-clothes:deleteOutfitMenuApp', function(data)
 	Wait(150)
 	local DeleteMenu = {
         {
-            header = '< Voltar',
+            header = '< Go Back',
             params = {
                 event = 'qb-clothes:clothingShop'
             }
@@ -479,8 +479,8 @@ RegisterNetEvent('qb-clothes:deleteOutfitMenuApp', function(data)
     }
     for i=1, #allMyOutfits, 1 do
         DeleteMenu[#DeleteMenu + 1] = {
-            header = 'Apagar "'..allMyOutfits[i].name..'"',
-			txt = 'Esta ação é irreversível!',
+            header = 'Delete "'..allMyOutfits[i].name..'"',
+			txt = 'You will never be able to get this back!',
             params = {
 				event = 'qb-clothes:deleteOutfit',
 				args = allMyOutfits[i].id
@@ -502,7 +502,7 @@ CreateThread(function()
 		SetBlipAsShortRange(blip, true)
 
 		BeginTextCommandSetBlipName('STRING')
-		AddTextComponentSubstringPlayerName('Barbeiro')
+		AddTextComponentSubstringPlayerName('Barber Shop')
 		EndTextCommandSetBlipName(blip)
 	end
 	for k,v in ipairs(Config.ClothingShops) do
@@ -516,7 +516,7 @@ CreateThread(function()
 			SetBlipAsShortRange(blip, true)
 
 			BeginTextCommandSetBlipName('STRING')
-			AddTextComponentSubstringPlayerName('Loja de Roupa')
+			AddTextComponentSubstringPlayerName('Clothing Store')
 			EndTextCommandSetBlipName(blip)
 		end
 	end
@@ -525,7 +525,7 @@ end)
 -- Command(s)
 
 RegisterCommand('reloadskin', function()
-	qb-core.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
+	QBCore.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
 		exports['qb-clothes']:setPlayerAppearance(appearance)
 	end)
 	for k, v in pairs(GetGamePool('CObject')) do
@@ -814,7 +814,7 @@ local skinData = {
 } 
 
 RegisterNetEvent('qb-clothes:client:reloadSkin', function()
-	qb-core.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
+	QBCore.Functions.TriggerCallback('qb-clothes:getPlayerSkin', function(appearance)
 		exports['qb-clothes']:setPlayerAppearance(appearance)
 	end)
 	for k, v in pairs(GetGamePool('CObject')) do
@@ -826,7 +826,7 @@ RegisterNetEvent('qb-clothes:client:reloadSkin', function()
     end
 end)
 
-RegisterNetEvent('qb-clothing:client:loadOutfit', function(oData)
+RegisterNetEvent('qb-clothes:client:loadOutfit', function(oData)
     local ped = PlayerPedId()
 
     data = oData.outfitData
@@ -880,13 +880,13 @@ RegisterNetEvent('qb-clothing:client:loadOutfit', function(oData)
 
     -- Accessory
     if data["accessory"] ~= nil then
-        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
+        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, data["accessory"].item, data["accessory"].texture, 0)
         end
     else
-        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
+        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, -1, 0, 2)
@@ -931,7 +931,7 @@ RegisterNetEvent('qb-clothing:client:loadOutfit', function(oData)
     end
 end)
 
-RegisterNetEvent('qb-clothing:client:loadWorkOutfit', function(oDati)
+RegisterNetEvent('qb-clothes:client:loadWorkOutfit', function(oDati)
     local ped = PlayerPedId()
 	local oData = oDati.oDati
     data = oData.outfitData
@@ -985,13 +985,13 @@ RegisterNetEvent('qb-clothing:client:loadWorkOutfit', function(oDati)
 
     -- Accessory
     if data["accessory"] ~= nil then
-        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
+        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, data["accessory"].item, data["accessory"].texture, 0)
         end
     else
-        if qb-core.Functions.GetPlayerData().metadata["tracker"] then
+        if QBCore.Functions.GetPlayerData().metadata["tracker"] then
             SetPedComponentVariation(ped, 7, 13, 0, 0)
         else
             SetPedComponentVariation(ped, 7, -1, 0, 2)
@@ -1037,11 +1037,11 @@ RegisterNetEvent('qb-clothing:client:loadWorkOutfit', function(oDati)
 	TriggerEvent("qb-clothes:pickDefOutfitApp", oDati.vData)
 end)
 
-RegisterNetEvent('qb-core:Client:OnJobUpdate', function(JobInfo)
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerJob = JobInfo
 end)
 
-RegisterNetEvent('qb-core:Client:OnGangUpdate', function(InfoGang)
+RegisterNetEvent('QBCore:Client:OnGangUpdate', function(InfoGang)
     PlayerGang = InfoGang
 end)
 
@@ -1075,19 +1075,19 @@ CreateThread(function()
                         DrawMarker(2, Config.ClothingRooms[k].coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.2, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
                         if dist < 2 then
                             if PlayerJob.name == Config.ClothingRooms[k].requiredJob then
-                                DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Roupeiro')
+                                DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Wardrobe')
                                 if IsControlJustPressed(0, 38) then -- E
                                     gender = "male"
-                                    if qb-core.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
-									TriggerEvent("qb-clothing:client:openGuardaroba", Config.Outfits[PlayerJob.name][gender])
+                                    if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
+									TriggerEvent("qb-clothes:client:openGuardaroba", Config.Outfits[PlayerJob.name][gender])
                                 end
                             else
                                 if PlayerGang.name == Config.ClothingRooms[k].requiredJob then
-                                    DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Roupeiro')
+                                    DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Wardrobe')
                                     if IsControlJustPressed(0, 38) then -- E
                                         gender = "male"
-                                        if qb-core.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
-										TriggerEvent("qb-clothing:client:openGuardaroba", Config.Outfits[PlayerGang.name][gender])
+                                        if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
+										TriggerEvent("qb-clothes:client:openGuardaroba", Config.Outfits[PlayerGang.name][gender])
                                     end
                                 end
                             end

@@ -4,7 +4,7 @@ Config = {}
 Config.Framework = 'QBCore' -- 'ESX' or 'QBCore'.
 Config.getSharedObject = "esx:getSharedObject" --Change if you use an ESX Custom or ignore it.
 --#EYE-TARGET
-Config.Target = false -- Set this to true if u want to use s_target or qtarget
+Config.Target = true -- Set this to true if u want to use s_target or qtarget
 Config.TargetType = 's_target' -- choose between s_target/qtarget/s_target
 --#SELLING CONFIG
 Config.SellRequiredJob = true -- set it to true to block selling drugs to specific jobs
@@ -117,16 +117,16 @@ Config['Items'] = {
 
 function ShowNotification(msg, type) -- If u want u can change here the notifications 
     if type == 'inform' then 
-		ESX.ShowNotification(msg)
-		--QBCore.Functions.Notify(msg)
+		--ESX.ShowNotification(msg)
+		QBCore.Functions.Notify(msg)
     end
     if type == 'error' then 
-        ESX.ShowNotification(msg)
-	  	--QBCore.Functions.Notify(msg)
+        --ESX.ShowNotification(msg)
+	  	QBCore.Functions.Notify(msg)
     end
     if type == 'success' then 
-        ESX.ShowNotification(msg)
-		--QBCore.Functions.Notify(msg)
+        --ESX.ShowNotification(msg)
+		QBCore.Functions.Notify(msg)
     end
 end
 

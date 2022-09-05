@@ -376,25 +376,26 @@ RegisterNetEvent('s_fuel:client:RefuelVehicle', function(refillCost)
 end)
 
 -- Target Export
-
-exports['s_target']:AddTargetModel(props, {
-	options = {
-		{
-			type = "client",
-			event = "s_fuel:client:buyCanMenu",
-			icon = "fas fa-burn",
-			label = "Comprar Jerry Can",
+CreateThread(function()
+	exports['s_target']:AddTargetModel(props, {
+		options = {
+			{
+				
+				event = "s_fuel:client:buyCanMenu",
+				icon = "fas fa-burn",
+				label = "Comprar Jerry Can",
+				
+			},
+			{
 			
+				event = "s_fuel:client:refuelCanMenu",
+				icon = "fas fa-gas-pump",
+				label = "Encher Jerry Can",
+				canInteract = function(entity)
+					return isHoldingWeapon(GetHashKey("weapon_petrolcan"))
+				end,
+			}
 		},
-		{
-			type = "client",
-			event = "s_fuel:client:refuelCanMenu",
-			icon = "fas fa-gas-pump",
-			label = "Encher Jerry Can",
-			canInteract = function(entity)
-				return isHoldingWeapon(GetHashKey("weapon_petrolcan"))
-			end,
-		},
-	},
-	distance = 2.0
-})
+		distance = 2.0
+	})
+end)

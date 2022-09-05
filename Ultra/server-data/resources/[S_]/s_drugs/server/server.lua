@@ -18,9 +18,9 @@ RegisterNetEvent("nxt_core:server:apanhacocaina")
 AddEventHandler("nxt_core:server:apanhacocaina", function(item, count)
     local _source = source
     local xPlayer  = ESX.GetPlayerFromId(_source)
-        if xPlayer ~= nil then
-            xPlayer.addInventoryItem(Config['Items']['pickupcocaine'], Config['Drugs']['cocainevalues']['pickup'])
-        end
+    if xPlayer ~= nil then
+        xPlayer.addInventoryItem(Config['Items']['pickupcocaine'], Config['Drugs']['cocainevalues']['pickup'])
+    end
 end)
 
 -- PROCESSO

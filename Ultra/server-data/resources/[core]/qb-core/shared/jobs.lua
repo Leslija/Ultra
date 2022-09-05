@@ -350,6 +350,30 @@ QBShared.Jobs = {
                 payment = 200
             },
         },
+	},
+    ['burgershot'] = {
+		label = 'BurgerShot',
+		defaultDuty = false,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruta',
+                payment = 200
+            },
+			['1'] = {
+                name = 'Trabalhador',
+                payment = 200
+            },
+			['2'] = {
+                name = 'Gerente',
+                payment = 200
+            },
+			['3'] = {
+                name = 'Patrão',
+				isboss = true,
+                payment = 200
+            },
+        },
 	}
 }
 

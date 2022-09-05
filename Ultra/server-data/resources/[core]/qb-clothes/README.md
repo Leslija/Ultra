@@ -2,7 +2,7 @@
 # This is a modification of [aj-fivem-appearance](https://github.com/ihyajb/aj-fivem-appearance)
 #### Thanks to ihyajb and ZiggyJoJo for original and modified reposity... but i edited a bit of code and renamed the resource... =)
 
-## This work with PED (s_target) and JOB Outfit, just edit config.lua with your job and set number of component (like qb-clothing)
+## This work with PED (s_target) and JOB Outfit, just edit config.lua with your job and set number of component (like qb-clothes)
 #### Attention: the ped model i chose for are for a 2189 gamebuild, if you don't use this gamebuild, change the model of ped https://wiki.rage.mp/index.php?title=Peds
 
 Don't forget to import sql file

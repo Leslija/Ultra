@@ -97,6 +97,20 @@ Config.Locations = {
 		bliplabel = "Bennys",
 		blipcolor = 55,
     },
+	[3] = {
+		label = "bennys", -- Set this to the required job
+        zones = {
+			vector2(-30.72, -1053.86),
+			vector2(-246.83804321289, -1252.5169677734),
+			vector2(-173.21493530273, -1248.0953369141),
+			vector2(-145.33396911621, -1293.0988769531),
+			vector2(-155.05891418457, -1310.0799560547),
+			vector2(-178.10710144043, -1342.1934814453)
+        },
+		blip = vector3(-30.72, -1053.86, 27.99),
+		bliplabel = "Bennys",
+		blipcolor = 55,
+    },
     -- Add a new job like this with location
 	-- Check out https://github.com/mkafrin/PolyZone/wiki/Using-the-creation-script for information on how to make polyzones, its really easy
 	-- When you have the vectors, copy them into a new zone below and it should work!

@@ -97,6 +97,22 @@ Config.TargetModels = {
 		},
 		distance = 1.5
 	},
+	
+	["burgershotgarage"] = {
+		models = {
+			"ig_floyd"
+		},
+		options = {
+			{
+				type = "client",
+				event = "garage:BurgerShotGarage",
+				icon = "fas fa-car",
+				label = "BurgerShot Garage",
+				job = "burgershot",
+			},
+		},
+		distance = 2.5,
+	},
 
 }
 

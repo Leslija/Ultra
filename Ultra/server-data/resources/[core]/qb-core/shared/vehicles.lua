@@ -4,7 +4,7 @@ QBShared.VehicleHashes = {}
 QBShared.Vehicles = {
 	--- CATEGORIA 1
 	['polo2018'] = {
-		['name'] = 'Volkswagen Polo R-Line 2018',
+		['name'] = 'Polo R-Line 2018',
 		['brand'] = 'Volkswagen',
 		['model'] = 'polo2018',
 		['price'] = 120000,
@@ -14,7 +14,7 @@ QBShared.Vehicles = {
 	},
 
 	['blista'] = {
-		['name'] = 'Audi A3 1999',
+		['name'] = 'A3 1999',
 		['brand'] = 'Audi',
 		['model'] = 'blista',
 		['price'] = 100000,
@@ -24,7 +24,7 @@ QBShared.Vehicles = {
 	},
 
 	['supra2'] = {
-		['name'] = 'Toyota Supra',
+		['name'] = 'Supra',
 		['brand'] = 'Toyota',
 		['model'] = 'supra2',
 		['price'] = 500000,
@@ -34,7 +34,7 @@ QBShared.Vehicles = {
 	},
 
 	['evoque'] = {
-		['name'] = 'Range Rover Evoque',
+		['name'] = 'Evoque',
 		['brand'] = 'Range Rover',
 		['model'] = 'evoque',
 		['price'] = 500000,
@@ -46,7 +46,7 @@ QBShared.Vehicles = {
 	
 
 	['cp9a'] = {
-		['name'] = 'Mitsubishi Evo VI',
+		['name'] = 'Evo VI',
 		['brand'] = 'Mitsubishi',
 		['model'] = 'cp9a',
 		['price'] = 600000,
@@ -56,7 +56,7 @@ QBShared.Vehicles = {
 	},
 
 	['a45amg'] = {
-		['name'] = 'Mercedes-Benz Classe A45 AMG',
+		['name'] = 'Classe A45 AMG',
 		['brand'] = 'Mercedes',
 		['model'] = 'a45amg',
 		['price'] = 400000,
@@ -66,8 +66,8 @@ QBShared.Vehicles = {
 	},
 
 	['HDIron883'] = {
-		['name'] = 'Harley Davidson 883',
-		['brand'] = 'Harley',
+		['name'] = '883',
+		['brand'] = 'Harley Davidson',
 		['model'] = 'HDIron883',
 		['price'] = 500000,
 		['category'] = 'Categoria1',
@@ -78,7 +78,7 @@ QBShared.Vehicles = {
 	-- CATEGORIA 2
 
 	['focusrs'] = {
-		['name'] = 'Ford Focus 2017 RS',
+		['name'] = 'Focus 2017 RS',
 		['brand'] = 'Ford',
 		['model'] = 'focusrs',
 		['price'] = 600000,
@@ -88,7 +88,7 @@ QBShared.Vehicles = {
 	},
 
 	['jeepg'] = {
-		['name'] = 'Jeep Gladiator',
+		['name'] = 'Gladiator',
 		['brand'] = 'Jeep',
 		['model'] = 'jeepg',
 		['price'] = 750000,
@@ -98,7 +98,7 @@ QBShared.Vehicles = {
 	},
 
 	['raptor150'] = {
-		['name'] = 'Ford Raptor',
+		['name'] = 'Raptor',
 		['brand'] = 'Ford',
 		['model'] = 'raptor150',
 		['price'] = 650000,
@@ -108,7 +108,7 @@ QBShared.Vehicles = {
 	},
 
 	['nissantitan17'] = {
-		['name'] = 'Nissan Titan',
+		['name'] = 'Titan',
 		['brand'] = 'Nissan',
 		['model'] = 'nissantitan17',
 		['price'] = 600000,
@@ -118,7 +118,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodmk7'] = {
-		['name'] = 'Volkswagen Golf MK7 Widebody',
+		['name'] = 'Golf MK7 Widebody',
 		['brand'] = 'Volkswagen',
 		['model'] = 'rmodmk7',
 		['price'] = 700000,
@@ -128,7 +128,7 @@ QBShared.Vehicles = {
 	},
 
 	['giuliagtam'] = {
-		['name'] = 'Alfa Romeo Giulia',
+		['name'] = 'Giulia',
 		['brand'] = 'Alfa Romeo',
 		['model'] = 'giuliagtam',
 		['price'] = 850000,
@@ -137,7 +137,7 @@ QBShared.Vehicles = {
 		['shop'] = 'pdm',
 	},
 	['rs52021'] = {
-		['name'] = 'Audi RS5 2021',
+		['name'] = 'RS5 2021',
 		['brand'] = 'Audi',
 		['model'] = 'rs52021',
 		['price'] = 900000,
@@ -146,7 +146,7 @@ QBShared.Vehicles = {
 		['shop'] = 'pdm',
 	},
 	['e63w213'] = {
-		['name'] = 'Mercedes E63 AMG',
+		['name'] = 'E63 AMG',
 		['brand'] = 'Mercedes',
 		['model'] = 'e63w213',
 		['price'] = 1000000,
@@ -156,7 +156,7 @@ QBShared.Vehicles = {
 	},
 	
 	['m2f22'] = {
-		['name'] = 'Bmw M2F22',
+		['name'] = 'M2F22',
 		['brand'] = 'BMW',
 		['model'] = 'm2f22',
 		['price'] = 1000000,
@@ -166,19 +166,29 @@ QBShared.Vehicles = {
 	},
 
 	['m3e36'] = {
-		['name'] = 'Bmw E36',
+		['name'] = 'E36',
 		['brand'] = 'BMW',
 		['model'] = 'm3e36',
 		['price'] = 900000,
 		['category'] = 'Categoria2',
 		['hash'] = `m3e36`,
 		['shop'] = 'pdm',
+	},	
+	
+	['sentinel'] = {
+		['name'] = 'Sentinel',
+		['brand'] = '',
+		['model'] = 'sentinel',
+		['price'] = 300000,
+		['category'] = 'Categoria2',
+		['hash'] = `sentinel`,
+		['shop'] = 'pdm',
 	},
 
 	-- CATEGORIA 3
 
 	['22m5'] = {
-		['name'] = 'BMW M5',
+		['name'] = 'M5',
 		['brand'] = 'BMW',
 		['model'] = '22m5',
 		['price'] = 1200000,
@@ -188,7 +198,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodrs6'] = {
-		['name'] = 'Audi RS6 C8',
+		['name'] = 'RS6 C8',
 		['brand'] = 'Audi',
 		['model'] = 'rmodrs6',
 		['price'] = 1800000,
@@ -198,7 +208,7 @@ QBShared.Vehicles = {
 	},
 
 	['rs7'] = {
-		['name'] = 'Audi RS7',
+		['name'] = 'RS7',
 		['brand'] = 'Audi',
 		['model'] = 'rs7',
 		['price'] = 1900000,
@@ -208,7 +218,7 @@ QBShared.Vehicles = {
 	},
 
 	['m4lb'] = {
-		['name'] = 'Bmw M4 GT',
+		['name'] = 'M4 GT',
 		['brand'] = 'BMW',
 		['model'] = 'm4lb',
 		['price'] = 1400000,
@@ -218,7 +228,7 @@ QBShared.Vehicles = {
 	},
 
 	['bmwm8'] = {
-		['name'] = 'Bmw M8',
+		['name'] = 'M8',
 		['brand'] = 'BMW',
 		['model'] = 'bmwm8',
 		['price'] = 2000000,
@@ -228,7 +238,7 @@ QBShared.Vehicles = {
 	},
 
 	['mlmansory'] = {
-		['name'] = 'Maserati Levante',
+		['name'] = 'Levante',
 		['brand'] = 'Maserati',
 		['model'] = 'mlmansory',
 		['price'] = 1600000,
@@ -238,7 +248,7 @@ QBShared.Vehicles = {
 	},
 
 	['bmws'] = {
-		['name'] = 'Bmw S1000',
+		['name'] = 'S1000',
 		['brand'] = 'BMW',
 		['model'] = 'bmws',
 		['price'] = 1500000,
@@ -248,7 +258,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodgt63'] = {
-		['name'] = 'Mercedes GT63S',
+		['name'] = 'GT63S',
 		['brand'] = 'Mercedes',
 		['model'] = 'rmodgt63',
 		['price'] = 1800000,
@@ -258,7 +268,7 @@ QBShared.Vehicles = {
 	},
 
 	['skyline'] = {
-		['name'] = 'Nissan Skyline R34',
+		['name'] = 'Skyline R34',
 		['brand'] = 'Nissan',
 		['model'] = 'skyline',
 		['price'] = 1500000,
@@ -266,19 +276,8 @@ QBShared.Vehicles = {
 		['hash'] = `skyline`,
 		['shop'] = 'pdm',
 	},
-
-	['skyline'] = {
-		['name'] = 'Nissan Skyline R34',
-		['brand'] = 'Nissan',
-		['model'] = 'skyline',
-		['price'] = 1500000,
-		['category'] = 'Categoria3',
-		['hash'] = `skyline`,
-		['shop'] = 'pdm',
-	},
-
 	['wraith19'] = {
-		['name'] = 'Rolls Wraith',
+		['name'] = ' Wraith',
 		['brand'] = 'RollsRoyce',
 		['model'] = 'wraith19',
 		['price'] = 1300000,
@@ -288,7 +287,7 @@ QBShared.Vehicles = {
 	},
 
 	['slr'] = {
-		['name'] = 'Mercedes SLR',
+		['name'] = 'SLR',
 		['brand'] = 'Mercedes',
 		['model'] = 'slr',
 		['price'] = 1500000,
@@ -298,7 +297,7 @@ QBShared.Vehicles = {
 	},
 
 	['z1000'] = {
-		['name'] = 'Kawasaki Z1000',
+		['name'] = 'Z1000',
 		['brand'] = 'Kawasaki',
 		['model'] = 'z1000',
 		['price'] = 1500000,
@@ -310,7 +309,7 @@ QBShared.Vehicles = {
 	-- CATEGORIA 4
 
 	['q8prior'] = {
-		['name'] = 'Audi Q8 Prime Edition',
+		['name'] = 'Q8 Prime Edition',
 		['brand'] = 'Audi',
 		['model'] = 'q8prior',
 		['price'] = 2400000,
@@ -320,7 +319,7 @@ QBShared.Vehicles = {
 	},
 
 	['r8spyder20'] = {
-		['name'] = 'Audi R8 Sypder',
+		['name'] = 'R8 Sypder',
 		['brand'] = 'Audi',
 		['model'] = 'r8spyder20',
 		['price'] = 3000000,
@@ -330,7 +329,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodx6'] = {
-		['name'] = 'Bmw X6',
+		['name'] = 'X6',
 		['brand'] = 'BMW',
 		['model'] = 'rmodx6',
 		['price'] = 2500000,
@@ -340,7 +339,7 @@ QBShared.Vehicles = {
 	},
 
 	['bmwx7'] = {
-		['name'] = 'BMW X7',
+		['name'] = 'X7',
 		['brand'] = 'BMW',
 		['model'] = 'bmwx7',
 		['price'] = 2300000,
@@ -350,7 +349,7 @@ QBShared.Vehicles = {
 	},
 
 	['g63amg6x6'] = {
-		['name'] = 'Mercedes G63 6x6',
+		['name'] = 'G63 6x6',
 		['brand'] = 'Mercedes',
 		['model'] = 'g63amg6x6',
 		['price'] = 2100000,
@@ -360,7 +359,7 @@ QBShared.Vehicles = {
 	},
 
 	['g63m'] = {
-		['name'] = 'Mercedes G63 Mansory',
+		['name'] = 'G63 Mansory',
 		['brand'] = 'Mercedes',
 		['model'] = 'g63m',
 		['price'] = 2300000,
@@ -370,7 +369,7 @@ QBShared.Vehicles = {
 	},
 
 	['19gt500'] = {
-		['name'] = 'Ford Mustang Shelby',
+		['name'] = 'Mustang Shelby',
 		['brand'] = 'Ford',
 		['model'] = '19gt500',
 		['price'] = 2600000,
@@ -380,7 +379,7 @@ QBShared.Vehicles = {
 	},
 
 	['urus'] = {
-		['name'] = 'Lamborghini Urus',
+		['name'] = 'Urus',
 		['brand'] = 'Lamborghini',
 		['model'] = 'urus',
 		['price'] = 2600000,
@@ -390,7 +389,7 @@ QBShared.Vehicles = {
 	},
 
 	['g63m'] = {
-		['name'] = 'Mercedes G63 Mansory',
+		['name'] = 'G63 Mansory',
 		['brand'] = 'Mercedes',
 		['model'] = 'g63m',
 		['price'] = 2300000,
@@ -400,7 +399,7 @@ QBShared.Vehicles = {
 	},
 
 	['tr22'] = {
-		['name'] = 'Tesla Roadster ',
+		['name'] = 'Roadster ',
 		['brand'] = 'Tesla',
 		['model'] = 'tr22',
 		['price'] = 4000000,
@@ -420,7 +419,7 @@ QBShared.Vehicles = {
 	},
 
 	['gtr'] = {
-		['name'] = 'Nissan GTR',
+		['name'] = 'GTR',
 		['brand'] = 'Nissan',
 		['model'] = 'gtr',
 		['price'] = 3100000,
@@ -430,7 +429,7 @@ QBShared.Vehicles = {
 	},
 
 	['911turbos'] = {
-		['name'] = 'Porsche 911 TurboS',
+		['name'] = '911 TurboS',
 		['brand'] = 'Porsche',
 		['model'] = '911turbos',
 		['price'] = 3500000,
@@ -440,7 +439,7 @@ QBShared.Vehicles = {
 	},
 
 	['pistas'] = {
-		['name'] = 'Ferrari 488 Pista Spider',
+		['name'] = '488 Pista Spider',
 		['brand'] = 'Ferrari',
 		['model'] = 'pistas',
 		['price'] = 3600000,
@@ -450,7 +449,7 @@ QBShared.Vehicles = {
 	},
 
 	['f5095'] = {
-		['name'] = 'Ferrari F50',
+		['name'] = 'F50',
 		['brand'] = 'Ferrari',
 		['model'] = 'f5095',
 		['price'] = 3000000,
@@ -460,7 +459,7 @@ QBShared.Vehicles = {
 	},
 
 	['panamera17turbo'] = {
-		['name'] = 'Porsche Panamera Turbo',
+		['name'] = 'Panamera Turbo',
 		['brand'] = 'Porsche',
 		['model'] = 'panamera17turbo',
 		['price'] = 3700000,
@@ -470,7 +469,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodmartin'] = {
-		['name'] = 'Aston Martin Superleggera',
+		['name'] = 'Superleggera',
 		['brand'] = 'Aston Martin',
 		['model'] = 'rmodmartin',
 		['price'] = 3700000,
@@ -480,7 +479,7 @@ QBShared.Vehicles = {
 	},
 
 	['992c'] = {
-		['name'] = 'Porsche 911 Carrera S Cabriolet',
+		['name'] = '911 Carrera S Cabriolet',
 		['brand'] = 'Porsche',
 		['model'] = '2200000',
 		['price'] = 3700000,
@@ -490,7 +489,7 @@ QBShared.Vehicles = {
 	},
 
 	['gle21'] = {
-		['name'] = 'Mercedes Benz GLE63s AMG 2021',
+		['name'] = 'Benz GLE63s AMG 2021',
 		['brand'] = 'Mercedes',
 		['model'] = 'gle21',
 		['price'] = 2100000,
@@ -500,7 +499,7 @@ QBShared.Vehicles = {
 	},
 
 	['macanturbo'] = {
-		['name'] = 'Porsche Macan',
+		['name'] = 'Macan',
 		['brand'] = 'Porsche',
 		['model'] = 'macanturbo',
 		['price'] = 2500000,
@@ -510,7 +509,7 @@ QBShared.Vehicles = {
 	},
 
 	['r6'] = {
-		['name'] = 'Yamaha YZF R6',
+		['name'] = 'YZF R6',
 		['brand'] = 'Yamaha',
 		['model'] = 'r6',
 		['price'] = 2200000,
@@ -522,7 +521,7 @@ QBShared.Vehicles = {
 	-- CATEGORIA 5
 
 	['rmodlp750'] = {
-		['name'] = 'Lamborghini Aventador SVJ',
+		['name'] = 'Aventador SVJ',
 		['brand'] = 'Lamborghini',
 		['model'] = 'rmodlp750',
 		['price'] = 4000000,
@@ -532,7 +531,7 @@ QBShared.Vehicles = {
 	},
 
 	['18performante'] = {
-		['name'] = 'Lamborghini Huracan Performance',
+		['name'] = 'Huracan Performance',
 		['brand'] = 'Lamborghini',
 		['model'] = '18performante',
 		['price'] = 4100000,
@@ -542,7 +541,7 @@ QBShared.Vehicles = {
 	},
 
 	['p1'] = {
-		['name'] = 'McLaren P1',
+		['name'] = 'P1',
 		['brand'] = 'McLaren',
 		['model'] = 'p1',
 		['price'] = 4200000,
@@ -552,7 +551,7 @@ QBShared.Vehicles = {
 	},
 
 	['divo'] = {
-		['name'] = 'Bugatti Divo',
+		['name'] = 'Divo',
 		['brand'] = 'Bugatti',
 		['model'] = 'divo',
 		['price'] = 5000000,
@@ -562,7 +561,7 @@ QBShared.Vehicles = {
 	},
 
 	['vulcan'] = {
-		['name'] = 'Aston Martin Vulcan',
+		['name'] = 'Vulcan',
 		['brand'] = 'Aston Martin',
 		['model'] = 'vulcan',
 		['price'] = 4500000,
@@ -572,7 +571,7 @@ QBShared.Vehicles = {
 	},
 
 	['victorhirot'] = {
-		['name'] = 'Aston Martin Victor Animated',
+		['name'] = 'Victor Animated',
 		['brand'] = 'Aston Martin',
 		['model'] = 'victorhirot',
 		['price'] = 4600000,
@@ -584,7 +583,7 @@ QBShared.Vehicles = {
 	-- VIP
 
 	['mi8'] = {
-		['name'] = 'BMW I8',
+		['name'] = 'I8',
 		['brand'] = 'BMW',
 		['model'] = 'mi8',
 		['price'] = 100000000,
@@ -594,7 +593,7 @@ QBShared.Vehicles = {
 	},
 
 	['sclgt63s'] = {
-		['name'] = 'Mercedes SCL Diamant GT63S',
+		['name'] = 'SCL Diamant GT63S',
 		['brand'] = 'Mercedes',
 		['model'] = 'sclgt63s',
 		['price'] = 100000000,
@@ -604,7 +603,7 @@ QBShared.Vehicles = {
 	},
 
 	['bdivo'] = {
-		['name'] = 'Bugatti Divo Prezmo',
+		['name'] = 'Divo Prezmo',
 		['brand'] = 'Bugatti',
 		['model'] = 'bdivo',
 		['price'] = 100000000,
@@ -615,7 +614,7 @@ QBShared.Vehicles = {
 
 
 	['aperta'] = {
-		['name'] = 'Ferrari La Ferrari',
+		['name'] = 'La Ferrari',
 		['brand'] = 'Ferrari',
 		['model'] = 'aperta',
 		['price'] = 100000000,
@@ -626,7 +625,7 @@ QBShared.Vehicles = {
 
 
 	['roma20'] = {
-		['name'] = 'Ferrari Roma',
+		['name'] = 'Roma',
 		['brand'] = 'Ferrari',
 		['model'] = 'roma20',
 		['price'] = 100000000,
@@ -636,7 +635,7 @@ QBShared.Vehicles = {
 	},
 
 	['h2carb'] = {
-		['name'] = 'Kawasaki H2',
+		['name'] = 'H2',
 		['brand'] = 'Kawasaki',
 		['model'] = 'h2carb',
 		['price'] = 100000000,
@@ -646,7 +645,7 @@ QBShared.Vehicles = {
 	},
 
 	['jes'] = {
-		['name'] = 'Koenigsegg Jesko',
+		['name'] = 'Jesko',
 		['brand'] = 'Koenigsegg',
 		['model'] = 'jes',
 		['price'] = 100000000,
@@ -656,7 +655,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodskyline34'] = {
-		['name'] = 'Nissan Skyline R34',
+		['name'] = 'Skyline R34',
 		['brand'] = 'Nissan',
 		['model'] = 'rmodskyline34',
 		['price'] = 100000000,
@@ -666,7 +665,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodveneno'] = {
-		['name'] = 'Lamborghini Veneno',
+		['name'] = 'Veneno',
 		['brand'] = 'Lamborghini',
 		['model'] = 'rmodveneno',
 		['price'] = 100000000,
@@ -686,7 +685,7 @@ QBShared.Vehicles = {
 	},
 
 	['pgt3'] = {
-		['name'] = 'Porsche GT3',
+		['name'] = 'GT3',
 		['brand'] = 'Porsche',
 		['model'] = 'pgt3',
 		['price'] = 100000000,
@@ -696,7 +695,7 @@ QBShared.Vehicles = {
 	},
 
 	['defenderoffp'] = {
-		['name'] = 'Range Rover Defender',
+		['name'] = 'Defender',
 		['brand'] = 'Range Rover',
 		['model'] = 'defenderoffp',
 		['price'] = 100000000,
@@ -706,7 +705,7 @@ QBShared.Vehicles = {
 	},
 
 	['812mnsry'] = {
-		['name'] = 'Ferrari 812 Mansory',
+		['name'] = '812 Mansory',
 		['brand'] = 'Ferrari',
 		['model'] = '812mnsry',
 		['price'] = 100000000,
@@ -716,7 +715,7 @@ QBShared.Vehicles = {
 	},
 
 	['sto'] = {
-		['name'] = 'Lamborghini STO',
+		['name'] = 'STO',
 		['brand'] = 'Lamborghini',
 		['model'] = 'sto',
 		['price'] = 100000000,
@@ -726,7 +725,7 @@ QBShared.Vehicles = {
 	},
 
 	['lamks'] = {
-		['name'] = 'Lamborghini Aventador KS AL',
+		['name'] = 'Aventador KS AL',
 		['brand'] = 'Lamborghini',
 		['model'] = 'lamks',
 		['price'] = 100000000,
@@ -736,7 +735,7 @@ QBShared.Vehicles = {
 	},
 
 	['casup'] = {
-		['name'] = 'Toyota Supra MKV',
+		['name'] = 'Supra MKV',
 		['brand'] = 'Toyota',
 		['model'] = 'casup',
 		['price'] = 100000000,
@@ -756,7 +755,7 @@ QBShared.Vehicles = {
 	},
 
 	['bugvr'] = {
-		['name'] = 'Bugatti Veyron Grand Sport',
+		['name'] = 'Veyron Grand Sport',
 		['brand'] = 'Bugatti',
 		['model'] = 'bugvr',
 		['price'] = 100000000,
@@ -766,7 +765,7 @@ QBShared.Vehicles = {
 	},
 
 	['rmodsian'] = {
-		['name'] = 'Lamborghini Sian',
+		['name'] = 'Sian',
 		['brand'] = 'Lamborghini',
 		['model'] = 'rmodsian',
 		['price'] = 100000000,

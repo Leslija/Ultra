@@ -23,12 +23,12 @@ QBConfig.Player.Bloodtypes = {
 QBConfig.Server = {} -- General server config
 QBConfig.Server.UseConnectQueue = true -- Use connectqueue as a queue for your server
 QBConfig.Server.Closed = false -- Set server closed (no one can join except people with ace permission 'qbadmin.join')
-QBConfig.Server.ClosedReason = "Servidor Fechado para manutenção" -- Reason message to display when people can't join the server
+QBConfig.Server.ClosedReason = "Servidor Teste de Scripts ." -- Reason message to display when people can't join the server
 QBConfig.Server.Uptime = 0 -- Time the server has been up.
 QBConfig.Server.Whitelist = false -- Enable or disable whitelist on the server
 QBConfig.Server.WhitelistPermission = 'admin' -- Permission that's able to enter the server when the whitelist is on
 QBConfig.Server.PVP = true -- Enable or disable pvp on the server (Ability to shoot other players)
-QBConfig.Server.Discord = "" -- Discord invite link
+QBConfig.Server.Discord = "https://discord.gg/dmNSBzWXkB" -- Discord invite link
 QBConfig.Server.CheckDuplicateLicense = true -- Check for duplicate rockstar license on join
 QBConfig.Server.Permissions = { 'god', 'admin', 'mod' } -- Add as many groups as you want here after creating them in your server.cfg
 

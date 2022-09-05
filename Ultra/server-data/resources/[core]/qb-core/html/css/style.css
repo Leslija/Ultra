@@ -5,23 +5,55 @@ html::-webkit-scrollbar {
 .success {
     background-color: rgba(23, 23, 23, 90%);
     border-radius: 10px;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
-    border-left: 0.5rem solid #00f8b9;
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.success-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    color: #069a19;
 }
 
 .primary {
     background-color: rgba(23, 23, 23, 90%);
     border-radius: 10px;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
-    border-left: 5px solid #00cad5;
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.primary-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0f3";
+    color: #ffffff;
 }
 
 .error {
     background-color: rgba(23, 23, 23, 90%);
     border-radius: 10px;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
-    border-left: 5px solid #c10114;
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
 }
+
+.error-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00d";
+    color: #ff2121;
+}
+
 
 .police {
     background-color: rgba(23, 23, 23, 90%);

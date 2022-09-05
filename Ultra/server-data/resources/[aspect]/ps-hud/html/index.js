@@ -10918,7 +10918,7 @@ function ql(n) {
 			height: 60,
 			width: 60,
 			progressValue: n[0].speed,
-			text: "MPH",
+			text: "KM/H",
 			displayNumber: n[0].speed,
 			maxProgressValue: 180
 		}

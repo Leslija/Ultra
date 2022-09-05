@@ -41,7 +41,7 @@ CreateThread(function()
 			{
 				event = "qb-clothes:clothingShop",
 				icon = "fas fa-tshirt",
-				label = "Loja de Roupa",
+				label = "Clothing",
 			},
 		},
 			distance = 2.5 
@@ -52,7 +52,7 @@ CreateThread(function()
 			{
 				event = "qb-clothes:barberMenu",
 				icon = "fas fa-horse-head",
-				label = "Barbeiro",
+				label = "Barber Shop",
 			},
 		},
 			distance = 2.5 

@@ -102,7 +102,7 @@ Config.BarberShops = {
 }
 
 Config.ClothingRooms = {
-    [1] = {requiredJob = "police", coords = vector3(461.58, -999.66, 30.69)},
+    [1] = {requiredJob = "police", coords = vector3(362.74, -1593.51, 25.45)},
     [2] = {requiredJob = "ambulance", coords = vector3(298.8991, -598.097, 43.284)}
 }
 
@@ -110,7 +110,7 @@ Config.Outfits = {
     ["police"] = {
         ["male"] = {
             [1] = {
-                outfitLabel = "FALTA FAZER",
+                outfitLabel = "Recluta",
                 outfitData = {
                     ["arms"]        = { item = 0, texture = 0},  -- Armen
                     ["t-shirt"]     = { item = 66, texture = 0},  -- T Shirt
@@ -130,7 +130,7 @@ Config.Outfits = {
 		},
         ["female"] = {
             [1] = {
-                outfitLabel = "FALTA FAZER",
+                outfitLabel = "Recluta",
                 outfitData = {
                     ["arms"]        = { item = 14, texture = 0},  -- Armen
                     ["t-shirt"]     = { item = 8, texture = 0},  -- T Shirt
@@ -153,7 +153,7 @@ Config.Outfits = {
     ["ambulance"] = {
         ["male"] = {
             [1] = {
-                outfitLabel = "FALTA FAZER",
+                outfitLabel = "Tirocinio",
                 outfitData = {
                     ["pants"]       = { item = 32, texture = 0 },  -- Broek
                     ["arms"]        = { item = 89, texture = 0},  -- Armen
@@ -173,7 +173,7 @@ Config.Outfits = {
         },
         ["female"] = {
             [1] = {
-                outfitLabel = "FALTA FAZER",
+                outfitLabel = "Tirocinio",
                 outfitData = {
                     ["pants"]       = { item = 3, texture = 7},  -- Broek
                     ["arms"]        = { item = 113, texture = 0},  -- Armen

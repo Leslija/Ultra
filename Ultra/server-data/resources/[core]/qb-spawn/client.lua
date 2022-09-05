@@ -39,26 +39,76 @@ RegisterNetEvent('qb-houses:client:setHouseConfig', function(houseConfig)
     Config.Houses = houseConfig
 end)
 
-RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
-    if not new then
-        QBCore.Functions.TriggerCallback('qb-spawn:server:getOwnedHouses', function(houses)
-            local myHouses = {}
-            if houses ~= nil then
-                for i = 1, (#houses), 1 do
-                    myHouses[#myHouses+1] = {
-                        house = houses[i].house,
-                        label = Config.Houses[houses[i].house].adress,
-                    }
-                end
-            end
+-- RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
+--     if not new then
+--         QBCore.Functions.TriggerCallback('qb-spawn:server:getOwnedHouses', function(houses)
+--             local myHouses = {}
+--             if houses ~= nil then
+--                 for i = 1, (#houses), 1 do
+--                     myHouses[#myHouses+1] = {
+--                         house = houses[i].house,
+--                         label = Config.Houses[houses[i].house].adress,
+--                     }
+--                 end
+--             end
 
-            Wait(500)
-            SendNUIMessage({
-                action = "setupLocations",
-                locations = QB.Spawns,
-                houses = myHouses,
-            })
-        end, cData.citizenid)
+--             Wait(500)
+--             SendNUIMessage({
+--                 action = "setupLocations",
+--                 locations = QB.Spawns,
+--                 houses = myHouses,
+--             })
+--         end, cData.citizenid)
+--     elseif new then
+--         SendNUIMessage({
+--             action = "setupAppartements",
+--             locations = apps,
+--         })
+--     end
+-- end)
+
+RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
+    local PlayerData = QBCore.Functions.GetPlayerData()
+    local ped = PlayerPedId()
+
+    if not new then
+        startCam = CreateCam("DEFAULT_SCRIPTED_CAMERA", 1)
+        SetCamCoord(startCam, PlayerData.position.x, PlayerData.position.y, PlayerData.position.z+100)
+        SetCamActive(startCam, true)
+        PointCamAtCoord(startCam, PlayerData.position.x, PlayerData.position.y, PlayerData.position.z)
+        SetCamRot(startCam, -90.0, 0.0, -0.0, 2)
+        RenderScriptCams(true, true, 0, true, true)
+
+        DoScreenFadeIn(2000)
+        while not IsScreenFadedIn() do
+            Wait(1)
+        end
+
+        cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", 1)
+        SetCamCoord(cam, PlayerData.position.x, PlayerData.position.y, PlayerData.position.z+3)
+        SetCamRot(cam, -90.0, 0.0, 0.0, 2)
+        SetCamActive(cam, true)
+        SetCamActiveWithInterp(cam, startCam, 2500, true, true)
+
+        Wait(2000)
+
+
+        --DoScreenFadeOut(250)
+        Citizen.Wait(100)
+        RenderScriptCams(false, true, 2000, true, true);
+        SetEntityVisible(ped, true)
+        SetEntityCollision(ped, true, true)
+        SendNUIMessage({ event = "hide" })
+        SetNuiFocus(false, false)
+        Citizen.Wait(2000)
+        DoScreenFadeIn(1000)
+        TriggerScreenblurFadeIn(1000)
+        SetEntityCoords(PlayerPedId(), PlayerData.position.x, PlayerData.position.y, PlayerData.position.z - 0.9, 0, 0, 0, false)
+        FreezeEntityPosition(ped, false)
+        TriggerEvent('QBCore:Client:OnPlayerLoaded')
+        Wait(700)
+        TriggerScreenblurFadeOut(1000.0)
+        print('spawned')
     elseif new then
         SendNUIMessage({
             action = "setupAppartements",
